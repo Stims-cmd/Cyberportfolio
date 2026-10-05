@@ -9,14 +9,14 @@
   min-width: 280px;
   min-height: 200px;
   background: var(--bg-1);
-  border: 2px solid var(--border);
-  border-radius: 8px 8px 4px 4px;
-  box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,0.03);
+  border: 1px solid #0a3faa;
+  border-radius: 6px 6px 0 0;
+  box-shadow: var(--shadow), 0 0 0 1px #4d8cf0;
   overflow: hidden;
   pointer-events: auto;
   opacity: 0;
   transform: scale(0.97) translateY(6px);
-  transition: opacity 0.14s ease, transform 0.14s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: opacity 0.14s ease, transform 0.14s ease, box-shadow 0.15s ease;
 }
 .window[data-open="true"] { opacity: 1; transform: none; }
 .window[data-minimized="true"] { display: none; }
@@ -25,49 +25,48 @@
   width: 100% !important; height: 100% !important;
   border-radius: 0;
 }
-.window[data-focused="false"] { filter: saturate(0.85); }
-.window:focus-within,
-.window[data-focused="true"] {
-  border-color: var(--accent);
-  box-shadow: var(--shadow), 0 0 0 2px rgba(94,234,212,0.25);
+.window[data-focused="false"] {
+  border-color: #6b7a99;
+  box-shadow: var(--shadow), 0 0 0 1px #8a97b0;
 }
 
 .window-titlebar {
   display: flex; align-items: center; gap: 0.5rem;
-  padding: 0 0.5rem 0 0.8rem;
-  height: 40px;
-  background: linear-gradient(180deg, #232a3b 0%, #171c28 100%);
-  border-bottom: 1px solid var(--border);
+  padding: 0 3px 0 6px;
+  height: 30px;
+  background: linear-gradient(180deg, #9db9e8 0%, #84a4de 45%, #6690d8 55%, #9db9e8 100%);
   cursor: grab;
   user-select: none;
   flex-shrink: 0;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease;
 }
 .window[data-focused="true"] .window-titlebar {
-  background: linear-gradient(180deg, var(--accent) 0%, #ada0a0 100%);
+  background: linear-gradient(180deg, #4f94f7 0%, #2563eb 45%, #0d3dbf 55%, #3f87f5 100%);
 }
+.window-titlebar .win-title,
+.window-titlebar .win-icon { color: #e4ecfb; text-shadow: 0 1px 1px rgba(0,0,0,0.35); }
 .window[data-focused="true"] .window-titlebar .win-title,
-.window[data-focused="true"] .window-titlebar .win-icon { color: #06211c; }
+.window[data-focused="true"] .window-titlebar .win-icon { color: #fff; }
 .window-titlebar:active { cursor: grabbing; }
-.window-titlebar .win-icon { font-size: 1rem; }
+.window-titlebar .win-icon { font-size: 0.95rem; }
 .window-titlebar .win-title {
   flex: 1; font-size: 0.82rem; font-weight: 700;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.win-controls { display: flex; gap: 0.3rem; }
+.win-controls { display: flex; gap: 2px; }
 .win-controls button {
-  width: 24px; height: 22px;
+  width: 21px; height: 20px;
   display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.03));
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 3px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  color: var(--text-dim); font-size: 0.8rem;
+  background: linear-gradient(180deg, #fefefe 0%, #d6dce6 55%, #c3cadd 100%);
+  border: 1px solid #5872a6;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  color: #1b2638; font-size: 0.75rem; font-weight: 700;
 }
-.window[data-focused="true"] .win-controls button { color: #06211c; }
-.win-controls button:hover, .win-controls button:focus-visible { background: rgba(255,255,255,0.3); color: #06211c; outline: none; }
-.win-controls button:active { box-shadow: inset 0 1px 3px rgba(0,0,0,0.4); }
-.win-controls button.win-close:hover { background: var(--danger); color: #1a0000; }
+.win-controls button:hover, .win-controls button:focus-visible { background: linear-gradient(180deg, #ffffff, #e4e9f2); outline: none; }
+.win-controls button:active { box-shadow: inset 0 1px 3px rgba(0,0,0,0.35); }
+.win-controls button.win-close { background: linear-gradient(180deg, #f6a19f 0%, #e5504d 55%, #c22a27 100%); color: #fff; border-color: #7a1210; }
+.win-controls button.win-close:hover { background: linear-gradient(180deg, #ffb2b0, #ec5c59); }
 
 .window-body { flex: 1; min-height: 0; position: relative; }
 
