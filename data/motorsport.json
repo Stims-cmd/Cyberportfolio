@@ -3,12 +3,12 @@
     {
       "id": "mecanicien",
       "label": "🔧 Mécanicien d'assistance",
-      "description": "[Spécificités de ce rôle — à personnaliser]"
+      "description": "Préparer, entretenir et réparer le véhicule tout au long de l'épreuve. Un rôle qui demande précision, diagnostic rapide, réactivité et travail d'équipe, souvent dans des délais très courts."
     },
     {
       "id": "commissaire",
       "label": "🚩 Commissaire",
-      "description": "[Spécificités de ce rôle — à personnaliser]"
+      "description": "Veiller à la sécurité et au bon déroulement de l'épreuve sur le terrain. Observer, communiquer, appliquer les procédures et réagir rapidement face aux situations imprévues."
     }
   ],
   "events": [

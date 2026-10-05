@@ -44,7 +44,7 @@
   transition: background 0.15s ease, color 0.15s ease;
 }
 .window[data-focused="true"] .window-titlebar {
-  background: linear-gradient(180deg, var(--accent) 0%, #2fae9c 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, #ada0a0 100%);
 }
 .window[data-focused="true"] .window-titlebar .win-title,
 .window[data-focused="true"] .window-titlebar .win-icon { color: #06211c; }
