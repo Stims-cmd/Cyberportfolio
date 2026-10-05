@@ -5,7 +5,6 @@
     container.classList.add("cv-layout");
     container.innerHTML = `
       <h2>CV</h2>
-      <p>Place ton fichier PDF ici : <code>${CV_PATH}</code></p>
       <p>
         <a class="btn" href="${CV_PATH}" target="_blank" rel="noopener">Ouvrir le CV</a>
         <a class="btn secondary" href="${CV_PATH}" download>Télécharger</a>
