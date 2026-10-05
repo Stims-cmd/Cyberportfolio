@@ -70,6 +70,43 @@
 
 .window-body { flex: 1; min-height: 0; position: relative; }
 
+/* ---------- Thème Garage : paddock / rallye ---------- */
+@keyframes garage-flag-sweep {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.window.theme-garage {
+  border-color: #3a2a20;
+}
+.window.theme-garage .window-titlebar {
+  background:
+    repeating-linear-gradient(135deg, #1a1a1a 0 10px, #242424 10px 20px, #ff6a3d 20px 22px, #242424 22px 32px);
+  border-bottom: 2px solid #ff6a3d;
+}
+.window.theme-garage[data-open="true"] .window-titlebar {
+  animation: garage-flag-sweep 0.4s ease;
+}
+.window.theme-garage .window-titlebar .win-title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff3ea !important;
+}
+.window.theme-garage[data-focused="true"] {
+  border-color: #ff6a3d;
+  box-shadow: var(--shadow), 0 0 0 2px rgba(255,106,61,0.3);
+}
+.window.theme-garage .window-body {
+  background: linear-gradient(180deg, #1c1410 0%, #120d0a 100%);
+}
+.window.theme-garage .app-content h2 { color: #ffb48a; }
+.window.theme-garage .tag { background: rgba(255,106,61,0.18); color: #ff6a3d; }
+.window.theme-garage .tag:hover,
+.window.theme-garage .tag[aria-pressed="true"] { background: #ff6a3d; color: #1a0e08; }
+.window.theme-garage .card { border-color: rgba(255,106,61,0.3); background: rgba(255,106,61,0.04); }
+.window.theme-garage .card:hover, .window.theme-garage .card:focus-within { border-color: #ff6a3d; }
+.window.theme-garage .btn { background: #ff6a3d; color: #1a0e08; }
+.window.theme-garage .btn.secondary { background: rgba(255,255,255,0.08); color: #fff3ea; }
+
 .resize-handle {
   position: absolute; right: 0; bottom: 0;
   width: 16px; height: 16px;
