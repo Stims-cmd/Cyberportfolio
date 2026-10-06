@@ -11,7 +11,7 @@
     let activeRole = null;
 
     container.innerHTML = `
-      <h2>Garage — Rallye &amp; Sport Automobile</h2>
+      <h2>Rallye &amp; Sport Automobile</h2>
       <p class="placeholder">Clique sur un rôle pour voir son détail et filtrer la timeline.</p>
       <p id="role-filters">
         ${data.roles.map((r) => `<button class="tag" data-role="${r.id}" aria-pressed="false">${r.label}</button>`).join("")}
@@ -80,7 +80,7 @@
     renderEvents();
   }
 
-  WindowManager.registerApp("garage", {
+  WindowManager.registerApp("passions", {
     title: "Passions",
     icon: "🏁",
     width: 560,
