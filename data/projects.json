@@ -12,20 +12,24 @@
   },
   {
     "id": "project-02",
-    "title": "[NOM DU PROJET 2]",
-    "shortDescription": "[Description courte — une phrase]",
-    "date": "2025",
-    "status": "En cours",
-    "context": "[Contexte]",
-    "type": "Outil / Script",
-    "problem": "[Problème adressé]",
-    "goals": ["[Objectif]"],
-    "technologies": ["python", "git"],
-    "skills": ["backend", "algo"],
-    "challenges": "[Difficultés]",
-    "solutions": "[Solutions]",
-    "result": "[Résultat]",
-    "links": { "demo": "", "github": "", "docs": "" },
-    "images": []
+    "title": "Réseau | Sécurisation d’infrastructure réseau & supervision SIEM",
+    "shortDescription": "Déploiement et sécurisation en équipe d’une infrastructure réseau virtualisée, avec supervision SIEM, proxy SSL, filtrage réseau et analyse de vulnérabilités.",
+    "date": "Nov 2025",
+    "status": "Terminé",
+    "context": "Réseau",
+    "type": "Infra Réseau",
+    "technologies": ["OPNSense", "SIEM", "Proxy SSL", "Wazuh", "Squid"],
+    "skills": ["Sécurité Réseau", "Administration réseau"]
+  },
+  {
+    "id": "project-03",
+    "title": "DevSecOps | Développement web full stack sécurisé (Cyberfolio)",
+    "shortDescription": "Développement en équipe d’une application web full stack sécurisée, intégrant frontend, backend, base de données, API et mécanismes de protection contre les vulnérabilités web.",
+    "date": "Dec 2025",
+    "status": "Terminé",
+    "context": "Développement",
+    "type": "Développement",
+    "technologies": ["HTML", "CSS", "PHP", "MySQL", "API REST"],
+    "skills": ["Dev Full Stack", "Sécurité Web"]
   }
 ]

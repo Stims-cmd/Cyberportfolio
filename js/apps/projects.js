@@ -41,13 +41,8 @@
 
       <dl class="section-detail">
         <dt>Contexte</dt><dd>${p.context} · ${p.date} · ${p.status}</dd>
-        <dt>Problématique</dt><dd>${p.problem}</dd>
-        <dt>Objectifs</dt><dd>${(p.goals || []).join(" · ") || '<span class="placeholder">Non renseigné</span>'}</dd>
         <dt>Technologies</dt><dd>${(p.technologies || []).map(techTag).join(" ")}</dd>
         <dt>Compétences mobilisées</dt><dd>${(p.skills || []).map(techTag).join(" ") || '<span class="placeholder">—</span>'}</dd>
-        <dt>Défis</dt><dd>${p.challenges}</dd>
-        <dt>Solutions</dt><dd>${p.solutions}</dd>
-        <dt>Résultat</dt><dd>${p.result}</dd>
       </dl>
 
       <h2>Liens</h2>
@@ -55,7 +50,7 @@
         ${p.links?.demo ? `<a class="btn" href="${p.links.demo}" target="_blank" rel="noopener">Live Demo</a> ` : ""}
         ${p.links?.github ? `<a class="btn secondary" href="${p.links.github}" target="_blank" rel="noopener">GitHub</a> ` : ""}
         ${p.links?.docs ? `<a class="btn secondary" href="${p.links.docs}" target="_blank" rel="noopener">Documentation</a>` : ""}
-        ${!p.links?.demo && !p.links?.github && !p.links?.docs ? '<span class="placeholder">Aucun lien renseigné</span>' : ""}
+        ${!p.links?.demo && !p.links?.github && !p.links?.docs ? '<span class="placeholder">Aucun lien disponible</span>' : ""}
       </p>
     `;
 
