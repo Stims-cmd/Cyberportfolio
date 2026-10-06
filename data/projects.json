@@ -1,28 +1,14 @@
 [
   {
     "id": "project-01",
-    "title": "[NOM DU PROJET 1]",
-    "shortDescription": "[Description courte — une phrase]",
-    "date": "2026",
+    "title": "Réseau | Déploiement d’une infrastructure réseau sécurisée",
+    "shortDescription": "Conception et déploiement en équipe d’une infrastructure réseau d’entreprise virtualisée, segmentée et sécurisée, avec OPNsense, Windows Server et Linux.",
+    "date": "Oct 2025",
     "status": "Terminé",
-    "context": "[Projet personnel / scolaire / professionnel]",
-    "type": "Application Web",
-    "problem": "[Quel problème ou besoin ce projet résout-il ?]",
-    "goals": [
-      "[Objectif 1]",
-      "[Objectif 2]"
-    ],
-    "technologies": ["javascript", "html", "css", "git"],
-    "skills": ["frontend", "ui-ux"],
-    "challenges": "[Principales difficultés rencontrées]",
-    "solutions": "[Choix techniques et solutions mises en place]",
-    "result": "[Résultat final obtenu]",
-    "links": {
-      "demo": "",
-      "github": "https://github.com/ton-pseudo/projet-1",
-      "docs": ""
-    },
-    "images": []
+    "context": "Réseau",
+    "type": "Infra Réseau",
+    "technologies": ["DHCP", "AD", "DNS", "OPNSense"],
+    "skills": ["Travail d'équipe", "Administration réseau"]
   },
   {
     "id": "project-02",

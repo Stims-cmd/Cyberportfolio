@@ -6,7 +6,7 @@
       return;
     }
     container.innerHTML = `
-      <h2>Journey</h2>
+      <h2>Mon ADN</h2>
       <div class="card-list">
         ${steps.map((s) => `
           <div class="card">
@@ -44,7 +44,7 @@
   }
 
   WindowManager.registerApp("journey", {
-    title: "Journey",
+    title: "Mon ADN",
     icon: "🧬",
     width: 540,
     height: 480,

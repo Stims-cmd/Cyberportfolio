@@ -81,7 +81,7 @@
   }
 
   WindowManager.registerApp("garage", {
-    title: "Garage",
+    title: "Passions",
     icon: "🏁",
     width: 560,
     height: 480,

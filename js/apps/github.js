@@ -1,5 +1,5 @@
 (function () {
-  const GITHUB_USERNAME = "ton-pseudo"; // <- remplace par ton vrai pseudo GitHub
+  const GITHUB_USERNAME = "stims-cmd"; // <- remplace par ton vrai pseudo GitHub
 
   const repos = [
     // Liste statique optionnelle — laisse vide pour n'afficher que le lien du profil.
