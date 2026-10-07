@@ -1,7 +1,7 @@
 (function () {
   function render(container) {
     container.innerHTML = `
-      <h2>About Me</h2>
+      <h2>A Propos</h2>
       <p class="placeholder">[Courte présentation — qui tu es, ce que tu fais]</p>
 
       <h2>Parcours</h2>

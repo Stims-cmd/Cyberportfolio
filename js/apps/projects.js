@@ -12,7 +12,7 @@
       return;
     }
     container.innerHTML = `
-      <h2>Projets</h2>
+      <h2>Mes Projets</h2>
       <div class="card-list">
         ${projects.map((p) => `
           <div class="card">
