@@ -10,9 +10,9 @@
   { id: "skills", label: "Skills", glyph: "📊", pos: { top: "58%", left: "30%" } },
   { id: "github", label: "GitHub", glyph: "💻", pos: { top: "18%", left: "78%" } },
   { id: "journey", label: "Mon ADN", glyph: "🧬", pos: { top: "68%", left: "70%" } },
-  { id: "about", label: "About Me", glyph: "👤", pos: { top: "82%", left: "6%" } },
+  { id: "about", label: "A Propos", glyph: "👤", pos: { top: "82%", left: "6%" } },
   { id: "contact", label: "Contact", glyph: "✉️", pos: { top: "84%", left: "55%" } },
-  { id: "trash", label: "Trash", glyph: "🗑️", pos: { top: "4%", left: "92%" } },
+  { id: "trash", label: "Corbeille", glyph: "🗑️", pos: { top: "4%", left: "92%" } },
 ];
 
   const MIN_DISTANCE_PCT = 13; // écart minimal entre centres d'icônes, en % de la diagonale du bureau
