@@ -40,7 +40,7 @@
     return positions;
   }
 
-  function buildDesktopIcons() {
+    function buildDesktopIcons() {
     const wrap = document.getElementById("icons");
     const isDesktop = window.innerWidth > 768;
 
@@ -61,41 +61,15 @@
 
     if (isDesktop) {
       wrap.querySelectorAll("[data-app]").forEach((btn) => {
-      btn.addEventListener("click", () => WindowManager.openWindow(btn.dataset.app));
-      btn.addEventListener("dblclick", (e) => e.preventDefault());
-    });
-  }
-
-    wrap.querySelectorAll("[data-app]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.app === "trash") return openTrashEasterEgg();
-        WindowManager.openWindow(btn.dataset.app);
+        const p = posById[btn.dataset.app];
+        btn.style.top = `${p.top}%`;
+        btn.style.left = `${p.left}%`;
       });
-      btn.addEventListener("dblclick", (e) => e.preventDefault());
-    });
-  }
-
-  function buildStartMenu() {
-    const menu = document.getElementById("start-menu");
-    const btn = document.getElementById("start-btn");
-    menu.innerHTML = DESKTOP_ICONS.filter((a) => a.id !== "trash").map((app) => `
-      <button data-app="${app.id}" role="menuitem"><span aria-hidden="true">${app.glyph}</span> ${app.label}</button>
-    `).join("");
-
-    function toggle(open) {
-      menu.hidden = !open;
-      btn.setAttribute("aria-expanded", String(open));
     }
 
-    btn.addEventListener("click", () => toggle(menu.hidden));
-    document.addEventListener("click", (e) => {
-      if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) toggle(false);
-    });
-    menu.querySelectorAll("[data-app]").forEach((item) => {
-      item.addEventListener("click", () => {
-        WindowManager.openWindow(item.dataset.app);
-        toggle(false);
-      });
+    wrap.querySelectorAll("[data-app]").forEach((btn) => {
+      btn.addEventListener("click", () => WindowManager.openWindow(btn.dataset.app));
+      btn.addEventListener("dblclick", (e) => e.preventDefault());
     });
   }
 
