@@ -61,11 +61,10 @@
 
     if (isDesktop) {
       wrap.querySelectorAll("[data-app]").forEach((btn) => {
-        const p = posById[btn.dataset.app];
-        btn.style.top = `${p.top}%`;
-        btn.style.left = `${p.left}%`;
-      });
-    }
+      btn.addEventListener("click", () => WindowManager.openWindow(btn.dataset.app));
+      btn.addEventListener("dblclick", (e) => e.preventDefault());
+    });
+  }
 
     wrap.querySelectorAll("[data-app]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -107,15 +106,6 @@
     };
     tick();
     setInterval(tick, 15000);
-  }
-
-  // Easter egg simple : la corbeille contient un fichier caché
-  function openTrashEasterEgg() {
-    const id = "trash-egg";
-    if (!WindowManager || document.querySelector('.window[aria-label="Trash"]')) {
-      WindowManager.openWindow("trash");
-      return;
-    }
   }
 
   function registerTrashApp() {
