@@ -16,7 +16,7 @@
   }
 
   WindowManager.registerApp("about", {
-    title: "About Me",
+    title: "A Propos",
     icon: "👤",
     width: 460,
     height: 420,

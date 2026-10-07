@@ -80,7 +80,7 @@
     renderEvents();
   }
 
-  WindowManager.registerApp("passions", {
+  WindowManager.registerApp("garage", {
     title: "Passions",
     icon: "🏁",
     width: 560,

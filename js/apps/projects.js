@@ -63,7 +63,7 @@
     });
   }
 
-  WindowManager.registerApp("projets", {
+  WindowManager.registerApp("projects", {
     title: "Projets",
     icon: "📁",
     width: 560,

@@ -43,7 +43,7 @@
     panel.scrollIntoView({ behavior: "smooth" });
   }
 
-  WindowManager.registerApp("mon adn", {
+  WindowManager.registerApp("journey", {
     title: "Mon ADN",
     icon: "🧬",
     width: 540,
