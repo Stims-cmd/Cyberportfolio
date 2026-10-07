@@ -9,12 +9,26 @@ const WindowManager = (() => {
   const taskbarWindows = document.getElementById("taskbar-windows");
   const liveRegion = document.getElementById("live-region");
 
-  const apps = {}; // id -> { title, icon, render }
+  const apps = {}; // id -> { title, icon, render, desktop }
   const openWindows = {}; // id -> { el, focused, minimized, maximized }
   let zCounter = 10;
   let openOffset = 0;
+  let currentDesktop = "portfolio";
 
   const isMobile = () => window.innerWidth <= 768;
+  const appDesktop = (id) => (apps[id] && apps[id].desktop) || "portfolio";
+
+  function setDesktop(id) {
+    currentDesktop = id;
+    Object.entries(openWindows).forEach(([winId, win]) => {
+      win.el.dataset.desktopActive = String(appDesktop(winId) === currentDesktop);
+    });
+    updateTaskbar();
+  }
+
+  function getDesktop() {
+    return currentDesktop;
+  }
 
   function registerApp(id, config) {
     apps[id] = config;
@@ -36,9 +50,11 @@ const WindowManager = (() => {
     updateTaskbar();
   }
 
-  function updateTaskbar() {
+    function updateTaskbar() {
     taskbarWindows.innerHTML = "";
-    Object.entries(openWindows).forEach(([id, win]) => {
+    Object.entries(openWindows)
+      .filter(([id]) => appDesktop(id) === currentDesktop)
+      .forEach(([id, win]) => {
       const btn = document.createElement("button");
       btn.className = "taskbar-item";
       btn.dataset.active = win.el.dataset.focused === "true" && win.el.dataset.minimized !== "true";
@@ -120,9 +136,9 @@ const WindowManager = (() => {
   function openWindow(id) {
     const app = apps[id];
     if (!app) return console.warn(`App inconnue : ${id}`);
-
-    if (openWindows[id]) {
+      if (openWindows[id]) {
       openWindows[id].el.dataset.minimized = "false";
+      openWindows[id].el.dataset.desktopActive = "true";
       focusWindow(id);
       return;
     }
@@ -134,6 +150,8 @@ const WindowManager = (() => {
     el.dataset.open = "false";
     el.dataset.minimized = "false";
     el.dataset.maximized = isMobile() ? "true" : "false";
+    el.dataset.desktop = appDesktop(id);
+    el.dataset.desktopActive = String(appDesktop(id) === currentDesktop);
     if (app.theme) el.classList.add(`theme-${app.theme}`);
 
     openOffset = (openOffset + 28) % 160;
@@ -193,5 +211,5 @@ const WindowManager = (() => {
     }
   }
 
-  return { registerApp, openWindow, closeWindow, focusWindow };
+    return { registerApp, openWindow, closeWindow, focusWindow, setDesktop, getDesktop };
 })();

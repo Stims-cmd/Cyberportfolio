@@ -30,12 +30,45 @@ En dehors du clavier, je suis mécanicien d'assistance et commissaire de course 
   </div>
 </noscript>
 
+<div id="landing" class="landing" role="dialog" aria-label="Écran d'accueil">
+  <div class="landing-card">
+    <div class="landing-eyebrow">🖥️ Système personnel — [TON NOM]</div>
+    <h1>Bienvenue dans mon environnement de travail.</h1>
+    <p>
+      Ici, pas de menu classique : vous entrez directement dans mon bureau.
+      Cliquez sur les icônes, ouvrez les fenêtres, déplacez-les, et explorez
+      mes projets, mes compétences et mon parcours.
+    </p>
+    <div class="landing-worlds">
+      <div class="landing-world">
+        <span class="landing-world-icon" aria-hidden="true">💻</span>
+        <div>
+          <strong>Bureau Portfolio</strong>
+          <p>Projets, compétences, parcours, LAB, CV, GitHub, contact.</p>
+        </div>
+      </div>
+      <div class="landing-world">
+        <span class="landing-world-icon" aria-hidden="true">🏁</span>
+        <div>
+          <strong>Bureau Passion</strong>
+          <p>Rallye, motorsport, mécanique d'assistance, commissariat.</p>
+        </div>
+      </div>
+    </div>
+    <button id="landing-enter" class="btn landing-enter">Entrer dans le portfolio →</button>
+  </div>
+</div>
+
 <div id="desktop" class="desktop" aria-label="Bureau du portfolio">
   <div id="icons" class="icons" role="list"></div>
   <div id="windows-layer" class="windows-layer"></div>
 </div>
 
 <nav id="taskbar" class="taskbar" aria-label="Barre des tâches">
+  <button id="desktop-switch" class="desktop-switch-btn" aria-label="Changer de bureau">
+    <span id="desktop-switch-icon" aria-hidden="true">🏁</span>
+    <span id="desktop-switch-label">Bureau Passion</span>
+  </button>
   <div id="taskbar-windows" class="taskbar-windows" role="list"></div>
   <div id="clock" class="clock" aria-live="off"></div>
 </nav>

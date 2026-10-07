@@ -38,7 +38,77 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.7;
   color: #eef1f7; background: #0d0f14;
 }
-
+/* ---------- Écran d'accueil ---------- */
+.landing {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(94,234,212,0.12), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255,180,84,0.10), transparent 45%),
+    var(--bg-0);
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.landing[data-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.landing-card {
+  max-width: 560px;
+  width: 100%;
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+  box-shadow: var(--shadow);
+  animation: landing-rise 0.5s ease;
+}
+@keyframes landing-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.landing-eyebrow {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.landing-card h1 {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+.landing-card > p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.4rem;
+}
+.landing-worlds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.landing-world {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+.landing-world-icon { font-size: 1.4rem; }
+.landing-world strong { display: block; font-size: 0.85rem; margin-bottom: 0.2rem; }
+.landing-world p { margin: 0; font-size: 0.78rem; color: var(--text-dim); line-height: 1.4; }
+.landing-enter { width: 100%; justify-content: center; font-size: 0.9rem; padding: 0.7rem 1rem; }
 /* ---------- Bureau ---------- */
 .desktop {
   position: relative;
@@ -66,6 +136,28 @@ button { font-family: inherit; cursor: pointer; }
   color: rgba(255,255,255,0.05);
   pointer-events: none;
   user-select: none;
+}
+
+/* Bureau Passion : ambiance paddock/garage, nettement différente du bureau pro */
+.desktop.theme-passion {
+  background-color: #150f0b;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(255,106,61,0.12), transparent 45%),
+    radial-gradient(circle at 10% 85%, rgba(255,106,61,0.08), transparent 42%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0 12px, transparent 12px 24px);
+}
+.desktop.theme-passion::after {
+  content: "🏁  ⌁  🔧  ⌁  🏆  ⌁  🚩";
+  color: rgba(255,106,61,0.08);
+}
+.desktop.theme-passion .icon-btn .icon-glyph { filter: drop-shadow(0 4px 10px rgba(0,0,0,0.55)); }
+
+/* Transition courte lors du changement de bureau */
+.desktop.switching { animation: desktop-switch-fade 0.35s ease; }
+@keyframes desktop-switch-fade {
+  0% { opacity: 1; }
+  45% { opacity: 0; transform: scale(0.99); }
+  100% { opacity: 1; transform: none; }
 }
 
 .icons {
@@ -124,6 +216,20 @@ button { font-family: inherit; cursor: pointer; }
   border-top: 1px solid var(--border);
   z-index: 10000;
 }
+
+.desktop-switch-btn {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.desktop-switch-btn:hover, .desktop-switch-btn:focus-visible { border-color: var(--accent-2); outline: none; }
 
 .taskbar-windows {
   display: flex;

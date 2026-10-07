@@ -20,6 +20,7 @@
 }
 .window[data-open="true"] { opacity: 1; transform: none; }
 .window[data-minimized="true"] { display: none; }
+.window[data-desktop-active="false"] { display: none; }
 .window[data-maximized="true"] {
   top: 0 !important; left: 0 !important;
   width: 100% !important; height: 100% !important;

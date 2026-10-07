@@ -81,11 +81,12 @@
   }
 
   WindowManager.registerApp("garage", {
-    title: "Passions",
-    icon: "🏁",
-    width: 560,
-    height: 480,
-    theme: "garage",
-    render,
-  });
+  title: "Passions",
+  icon: "🏁",
+  width: 560,
+  height: 480,
+  theme: "garage",
+  desktop: "passion",
+  render,
+});
 })();

@@ -23,8 +23,12 @@
 
   .taskbar-item .taskbar-item-label { display: none; }
   .taskbar-item { padding: 0.4rem 0.55rem; }
+
+  .landing-worlds { grid-template-columns: 1fr; }
+  .landing-card { padding: 1.6rem 1.3rem; }
 }
 
 @media (max-width: 480px) {
   .clock { min-width: 0; font-size: 0.72rem; }
+  .desktop-switch-btn span:last-child { display: none; }
 }
