@@ -3,17 +3,17 @@
   // donner un rendu "vécu", avec resolveOverlaps() en filet de sécurité si
   // de nouvelles icônes sont ajoutées plus tard sans repenser le layout.
   const DESKTOP_ICONS = [
-    { id: "projects", label: "Projects", glyph: "📁", pos: { top: "8%", left: "5%" } },
-    { id: "cv", label: "CV", glyph: "📄", pos: { top: "6%", left: "42%" } },
-    { id: "lab", label: "LAB", glyph: "🧪", pos: { top: "26%", left: "48%" } },
-    { id: "garage", label: "Garage", glyph: "🏁", pos: { top: "40%", left: "8%" } },
-    { id: "skills", label: "Skills", glyph: "📊", pos: { top: "58%", left: "30%" } },
-    { id: "github", label: "GitHub", glyph: "💻", pos: { top: "18%", left: "78%" } },
-    { id: "journey", label: "Journey", glyph: "🧬", pos: { top: "68%", left: "70%" } },
-    { id: "about", label: "About Me", glyph: "👤", pos: { top: "82%", left: "6%" } },
-    { id: "contact", label: "Contact", glyph: "✉️", pos: { top: "84%", left: "55%" } },
-    { id: "trash", label: "Corbeille", glyph: "🗑️", pos: { top: "4%", left: "92%" } },
-  ];
+  { id: "projects", label: "Projects", glyph: "📁", pos: { top: "8%", left: "5%" } },
+  { id: "cv", label: "CV", glyph: "📄", pos: { top: "6%", left: "42%" } },
+  { id: "lab", label: "LAB", glyph: "🧪", pos: { top: "26%", left: "48%" } },
+  { id: "garage", label: "Passions", glyph: "🏁", pos: { top: "40%", left: "8%" } },
+  { id: "skills", label: "Skills", glyph: "📊", pos: { top: "58%", left: "30%" } },
+  { id: "github", label: "GitHub", glyph: "💻", pos: { top: "18%", left: "78%" } },
+  { id: "journey", label: "Mon ADN", glyph: "🧬", pos: { top: "68%", left: "70%" } },
+  { id: "about", label: "About Me", glyph: "👤", pos: { top: "82%", left: "6%" } },
+  { id: "contact", label: "Contact", glyph: "✉️", pos: { top: "84%", left: "55%" } },
+  { id: "trash", label: "Trash", glyph: "🗑️", pos: { top: "4%", left: "92%" } },
+];
 
   const MIN_DISTANCE_PCT = 13; // écart minimal entre centres d'icônes, en % de la diagonale du bureau
 
