@@ -87,9 +87,23 @@
       el.removeAttribute("src");
       return;
     }
+    // Masqué tant que la nouvelle image n'est pas prête, pour ne jamais
+    // afficher le fond de l'autre bureau pendant le chargement.
+    el.style.opacity = "0";
+    const show = () => { el.style.opacity = String(wp.opacity ?? 0.35); };
+    el.onload = show;
     el.onerror = () => { el.style.opacity = "0"; };
-    el.src = `./${wp.src}`;
-    el.style.opacity = String(wp.opacity ?? 0.35);
+    const url = new URL(`./${wp.src}`, document.baseURI).href;
+    if (el.src === url && el.complete && el.naturalWidth) show(); // même image déjà chargée : pas de nouvel événement load
+    else el.src = url;
+  }
+
+  // Télécharge tous les fonds dès l'arrivée sur la page : changer de bureau
+  // affiche alors l'image instantanément depuis le cache du navigateur.
+  function preloadWallpapers() {
+    Object.values(DESKTOPS).forEach(({ wallpaper }) => {
+      if (wallpaper?.src) new Image().src = `./${wallpaper.src}`;
+    });
   }
 
   function renderDesktopIcons(desktopId) {
@@ -234,6 +248,7 @@
   async function init() {
   initLanding();
   renderDesktopWallpaper(currentDesktopId);
+  preloadWallpapers();
   renderDesktopIcons(currentDesktopId);
   renderDesktopImages(currentDesktopId);
   initDesktopSwitch();
