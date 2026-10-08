@@ -32,8 +32,17 @@
   ];
 
   const PORTFOLIO_WALLPAPER = {
-  src: "assets/images/desktop/fond-passion.jpg",
+  src: "", 
   opacity: 0.35,
+  };
+
+  const PASSION_IMAGES = [
+    // { src: "assets/images/desktop/passion-sticker.png", alt: "[Description de l'image]", pos: { top: "60%", left: "85%" } },
+  ];
+
+  const PASSION_WALLPAPER = {
+    src: "assets/images/desktop/fond-passion.jpg", // ex: "assets/images/desktop/passion-wallpaper.jpg"
+    opacity: 0.35,
   };
 
   const DESKTOPS = {
