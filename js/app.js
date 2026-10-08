@@ -31,14 +31,15 @@
     // { src: "assets/images/desktop/portfolio-sticker.png", alt: "[Description de l'image]", pos: { top: "48%", left: "88%" } },
   ];
 
-  const PASSION_IMAGES = [
-    { src: "assets/images/desktop/fond-passion.jpg", alt: "DS3 WRC de Sebastien Loeb", pos: { top: "60%", left: "85%" } },
-  ];
+  const PORTFOLIO_WALLPAPER = {
+  src: "assets/images/desktop/fond-passion.jpg",
+  opacity: 0.35,
+  };
 
   const DESKTOPS = {
-    portfolio: { icons: PORTFOLIO_ICONS, images: PORTFOLIO_IMAGES, themeClass: null },
-    passion: { icons: PASSION_ICONS, images: PASSION_IMAGES, themeClass: "theme-passion" },
-  };
+  portfolio: { icons: PORTFOLIO_ICONS, images: PORTFOLIO_IMAGES, wallpaper: PORTFOLIO_WALLPAPER, themeClass: null },
+  passion: { icons: PASSION_ICONS, images: PASSION_IMAGES, wallpaper: PASSION_WALLPAPER, themeClass: "theme-passion" },
+};
 
   let currentDesktopId = "portfolio";
 

@@ -123,6 +123,8 @@ button { font-family: inherit; cursor: pointer; }
     repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 48px);
 }
 
+
+
 /* petites touches "cybersécurité" en fond, décoratives et non interactives */
 .desktop::after {
   content: "🔒  ⌁  🛡️  ⌁  📡  ⌁  🔑";
@@ -159,6 +161,20 @@ button { font-family: inherit; cursor: pointer; }
   45% { opacity: 0; transform: scale(0.99); }
   100% { opacity: 1; transform: none; }
 }
+/* Fond d'écran plein cadre du bureau */
+.desktop-wallpaper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 /* Images décoratives placées sur le bureau (pas des icônes, pas des fenêtres) */
 .desktop-images {
   position: absolute;
