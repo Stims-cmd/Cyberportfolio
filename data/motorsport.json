@@ -230,6 +230,19 @@
       ]
     },
     {
+      "id": "limonest-2026",
+      "name": "Course de côte de Limonest",
+      "date": "11-13 sept. 2026",
+      "start": "2026-09-11",
+      "end": "2026-09-13",
+      "location": "Limonest",
+      "role": "commissaire",
+      "description": "100e édition de cette course de côte organisée par l'ASA du Rhône, cette fois comme commissaire de parc.",
+      "experience": "Changement de métier : en tant que commissaire de parc, je devais garer les voitures dans l'ordre puis les envoyer en convois vers la montée. À trois, on a tenu le poste tout le week-end, de 7h à 19h. Il faut jongler avec trois contraintes : le temps, car chaque convoi part à heure fixe et l'ordre doit être juste ; la mécanique, car les voitures de course sont capricieuses (embrayages fragiles, procédures de démarrage propres à chacune) et un démarrage qui traîne retarde tout le convoi ; et l'humain, en gardant son calme face à des pilotes sous pression. Douze heures par jour, c'est long, mais on avait une vraie équipe, et c'est elle qui fait tenir le poste.",
+      "skills": ["gestion-temps", "procedures", "sang-froid", "travail-equipe"],
+      "photos": []
+    },
+    {
       "id": "suran-2026",
       "name": "Rallye du Suran",
       "date": "18-20 sept. 2026",
@@ -282,6 +295,7 @@
     { "id": "sang-froid", "label": "Sang-froid" },
     { "id": "securite", "label": "Sécurité" },
     { "id": "vigilance", "label": "Vigilance" },
+    { "id": "gestion-temps", "label": "Gestion du temps" },
     { "id": "encadrement", "label": "Encadrement" },
     { "id": "organisation", "label": "Organisation d'événement" }
   ]
