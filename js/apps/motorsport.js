@@ -33,16 +33,31 @@
       <h2>Timeline</h2>
       <div id="events-list" class="card-list"></div>
       <div id="upcoming-section"></div>
-      <div id="motorsport-detail"></div>
     `;
+
+    // Détail d'un rallye, déplié directement sous sa carte (accordéon).
+    const eventDetail = (ev) => `
+        <p class="desc">${ev.experience}</p>
+        <p>${(ev.skills || []).map((s) => `<span class="tag">${skillLabel(s)}</span>`).join("")}</p>
+        ${ev.photos?.length ? `
+          <div class="rally-photos">
+            ${ev.photos.map((ph) => `
+              <a href="./${ph.src}" target="_blank" rel="noopener">
+                <img src="./${ph.src}" alt="${ph.alt || ev.name}" loading="lazy">
+              </a>
+            `).join("")}
+          </div>
+        ` : '<p class="placeholder">Galerie photo à venir.</p>'}
+      `;
 
     const eventCard = (ev) => `
         <div class="card">
-          <button class="card-open" data-event="${ev.id}">
+          <button class="card-open" data-event="${ev.id}" aria-expanded="false" aria-controls="event-detail-${ev.id}">
             <div class="meta">${ev.date} · ${ev.location} · ${roleLabel(ev.role)}</div>
             <h3>${ev.name}</h3>
             <div class="desc">${ev.description}</div>
           </button>
+          <div class="event-detail" id="event-detail-${ev.id}" hidden></div>
         </div>
       `;
 
@@ -61,26 +76,13 @@
 
       container.querySelectorAll("[data-event]").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const ev = data.events.find((e) => e.id === btn.dataset.event);
-          const panel = container.querySelector("#motorsport-detail");
-          panel.innerHTML = `
-            <div class="card" style="margin-top:1rem">
-              <h3>${ev.name}</h3>
-              <p class="meta">${roleLabel(ev.role)} · ${ev.date} · ${ev.location}</p>
-              <p class="desc">${ev.experience}</p>
-              <p>${(ev.skills || []).map((s) => `<span class="tag">${skillLabel(s)}</span>`).join("")}</p>
-              ${ev.photos?.length ? `
-                <div class="rally-photos">
-                  ${ev.photos.map((ph) => `
-                    <a href="./${ph.src}" target="_blank" rel="noopener">
-                      <img src="./${ph.src}" alt="${ph.alt || ev.name}" loading="lazy">
-                    </a>
-                  `).join("")}
-                </div>
-              ` : '<p class="placeholder">Galerie photo à venir.</p>'}
-            </div>
-          `;
-          panel.scrollIntoView({ behavior: "smooth" });
+          const panel = btn.nextElementSibling;
+          const open = btn.getAttribute("aria-expanded") === "true";
+          if (!open && !panel.innerHTML) {
+            panel.innerHTML = eventDetail(data.events.find((e) => e.id === btn.dataset.event));
+          }
+          btn.setAttribute("aria-expanded", String(!open));
+          panel.hidden = open;
         });
       });
     }
