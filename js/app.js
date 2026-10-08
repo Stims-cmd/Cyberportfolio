@@ -34,7 +34,7 @@
 
   // Fond d'écran du bureau : mettre src à null pour garder le fond par défaut.
   const PORTFOLIO_WALLPAPER = {
-    src: "assets/images/desktop/fond-portfolio.webp",
+    src: "assets/images/desktop/fond-portfolio.avip",
     opacity: 0.35,
   };
 
