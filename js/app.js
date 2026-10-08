@@ -169,7 +169,7 @@
           width: 360,
           height: 220,
           render(container) {
-            container.innerHTML = `<h2>Bien joué 🎉</h2><p>Tu as trouvé un easter egg caché. [Remplace ce message par ce que tu veux.]</p>`;
+            container.innerHTML = `<h2>Bien joué 🎉</h2><p>Tu as trouvé un easter egg caché.</p>`;
           },
         });
         WindowManager.openWindow("secret");
