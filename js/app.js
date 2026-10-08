@@ -31,9 +31,10 @@
     // { src: "assets/images/desktop/portfolio-sticker.png", alt: "[Description de l'image]", pos: { top: "48%", left: "88%" } },
   ];
 
+  // Fond d'écran du bureau : mettre src à null pour garder le fond par défaut.
   const PORTFOLIO_WALLPAPER = {
-  src: "assets/images/desktop/fond-passion.jpg", 
-  opacity: 0.35,
+    src: null, // ex: "assets/images/desktop/portfolio-wallpaper.jpg"
+    opacity: 0.35,
   };
 
   const PASSION_IMAGES = [
@@ -41,7 +42,7 @@
   ];
 
   const PASSION_WALLPAPER = {
-    src: "assets/images/desktop/fond-passion.jpg", // ex: "assets/images/desktop/passion-wallpaper.jpg"
+    src: "assets/images/desktop/fond-passion.jpg",
     opacity: 0.35,
   };
 
@@ -80,17 +81,15 @@
   function renderDesktopWallpaper(desktopId) {
     const el = document.getElementById("desktop-wallpaper");
     const wp = DESKTOPS[desktopId].wallpaper;
-    console.log("WALLPAPER DEBUG:", desktopId, wp); // ← ligne temporaire de diagnostic
     if (!wp || !wp.src) {
       el.style.opacity = "0";
       el.removeAttribute("src");
       return;
     }
-    el.onerror = () => { console.log("WALLPAPER ERROR: fichier introuvable", el.src); el.style.opacity = "0"; };
-    el.onload = () => { console.log("WALLPAPER OK: chargée", el.src); };
+    el.onerror = () => { el.style.opacity = "0"; };
     el.src = `./${wp.src}`;
     el.style.opacity = String(wp.opacity ?? 0.35);
-}
+  }
 
   function renderDesktopIcons(desktopId) {
     const wrap = document.getElementById("icons");
@@ -163,6 +162,7 @@
     Object.values(DESKTOPS).forEach((d) => { if (d.themeClass) desktopEl.classList.remove(d.themeClass); });
     if (DESKTOPS[id].themeClass) desktopEl.classList.add(DESKTOPS[id].themeClass);
 
+    renderDesktopWallpaper(id);
     renderDesktopIcons(id);
     renderDesktopImages(id);
     WindowManager.setDesktop(id);
@@ -232,6 +232,7 @@
 
   async function init() {
   initLanding();
+  renderDesktopWallpaper(currentDesktopId);
   renderDesktopIcons(currentDesktopId);
   renderDesktopImages(currentDesktopId);
   initDesktopSwitch();
