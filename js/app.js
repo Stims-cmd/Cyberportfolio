@@ -8,7 +8,8 @@
   const PORTFOLIO_ICONS = [
     { id: "projects", label: "Projets", glyph: "📁", pos: { top: "8%", left: "5%" } },
     { id: "cv", label: "CV", glyph: "📄", pos: { top: "6%", left: "42%" } },
-    { id: "lab", label: "LAB", glyph: "🧪", pos: { top: "26%", left: "48%" } },
+    // LAB masqué tant qu'il n'y a pas d'expérience à présenter : décommenter pour le réafficher.
+    // { id: "lab", label: "LAB", glyph: "🧪", pos: { top: "26%", left: "48%" } },
     { id: "skills", label: "Skills", glyph: "📊", pos: { top: "58%", left: "30%" } },
     { id: "github", label: "GitHub", glyph: "💻", pos: { top: "18%", left: "78%" } },
     { id: "journey", label: "Mon ADN", glyph: "🧬", pos: { top: "68%", left: "70%" } },

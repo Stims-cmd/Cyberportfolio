@@ -1,27 +1,54 @@
 [
   {
-    "domain": "Développement Web",
+    "domain": "Cybersécurité défensive & SOC",
     "skills": [
-      { "id": "html", "name": "HTML", "level": 70, "description": "[À personnaliser]" },
-      { "id": "css", "name": "CSS", "level": 65, "description": "[À personnaliser]" },
-      { "id": "javascript", "name": "JavaScript", "level": 60, "description": "[À personnaliser]" },
-      { "id": "typescript", "name": "TypeScript", "level": 40, "description": "[À personnaliser]" },
-      { "id": "frontend", "name": "Frontend", "level": 55, "description": "[À personnaliser]" }
+      { "id": "Graylog", "name": "Graylog", "level": 70, "description": "Reprise et normalisation au format ECS de l'ensemble des règles de traitement des logs de sécurité de l'ENS de Lyon, résolution d'incidents d'indexation et reconstruction des tableaux de bord." },
+      { "id": "SIEM", "name": "SIEM", "level": 60, "description": "Mise en place d'une supervision SIEM en projet d'équipe à Guardia, et exploitation quotidienne d'un SIEM en stage à l'ENS." },
+      { "id": "Wazuh", "name": "Wazuh", "level": 50, "description": "Déploiement de Wazuh pour la supervision d'une infrastructure réseau virtualisée en projet à Guardia." },
+      { "id": "Analyse de logs", "name": "Analyse de logs", "level": 65, "description": "Normalisation, enrichissement et analyse de logs de sécurité, jusqu'à la conception d'un outil d'analyse assisté par IA." },
+      { "id": "Shuffle", "name": "Shuffle (SOAR)", "level": 50, "description": "Conception d'un workflow Shuffle qui croise les connexions avec les IP remontées sur MISP et produit des logs enrichis pour un corrélateur." },
+      { "id": "MISP", "name": "MISP", "level": 45, "description": "Exploitation des indicateurs MISP pour détecter les connexions vers des IP malveillantes." }
     ]
   },
   {
-    "domain": "Programmation",
+    "domain": "Sécurité offensive & analyse",
     "skills": [
-      { "id": "python", "name": "Python", "level": 50, "description": "[À personnaliser]" },
-      { "id": "algo", "name": "Algorithmique", "level": 45, "description": "[À personnaliser]" },
-      { "id": "backend", "name": "Backend", "level": 40, "description": "[À personnaliser]" }
+      { "id": "Pentest", "name": "Pentest", "level": 45, "description": "Observation du métier de pentester chez AlgoSecure, CTF de recrutement réalisé, et utilisation d'exploits sur des serveurs de test lors de mon premier stage à l'ENS." },
+      { "id": "Analyse de risques", "name": "Analyse de risques", "level": 55, "description": "Analyses de risques réalisées lors du stage auprès du RSSI de l'ENS (2022), puis approfondies chez AlgoSecure." },
+      { "id": "Threat Intelligence", "name": "Threat Intelligence", "level": 45, "description": "Utilisation de flux de renseignement sur les menaces (MISP) pour enrichir les logs et détecter des connexions suspectes." },
+      { "id": "Sécurité Web", "name": "Sécurité Web", "level": 50, "description": "Intégration de mécanismes de protection contre les vulnérabilités web dans une application full stack développée en équipe." }
     ]
   },
   {
-    "domain": "Outils",
+    "domain": "Réseau & systèmes",
     "skills": [
-      { "id": "git", "name": "Git", "level": 60, "description": "[À personnaliser]" },
-      { "id": "ui-ux", "name": "UI / UX", "level": 50, "description": "[À personnaliser]" }
+      { "id": "OPNSense", "name": "OPNsense", "level": 60, "description": "Déploiement et sécurisation de pare-feux OPNsense pour segmenter une infrastructure réseau d'entreprise virtualisée." },
+      { "id": "Administration réseau", "name": "Administration réseau", "level": 60, "description": "Conception et déploiement en équipe d'infrastructures réseau segmentées (DHCP, DNS, Active Directory)." },
+      { "id": "Sécurité Réseau", "name": "Sécurité réseau", "level": 55, "description": "Filtrage réseau, proxy SSL et analyse de vulnérabilités sur une infrastructure virtualisée ; création d'un firewall en stage." },
+      { "id": "AD", "name": "Active Directory", "level": 45, "description": "Mise en place d'un Active Directory sous Windows Server dans une infrastructure d'entreprise virtualisée." },
+      { "id": "Linux", "name": "Linux", "level": 60, "description": "Création et configuration de machines virtuelles Linux, et travail au quotidien sous Ubuntu chez AlgoSecure." },
+      { "id": "Support utilisateurs", "name": "Support & poste de travail", "level": 65, "description": "Support informatique à l'ENS et services aux particuliers avec 69 Info Services : passage à Windows 11, sécurisation, sauvegardes." }
+    ]
+  },
+  {
+    "domain": "Développement & automatisation",
+    "skills": [
+      { "id": "Python", "name": "Python", "level": 55, "description": "Développement d'un plugin Python intégré à la plateforme d'analyse d'attaques externes d'AlgoSecure." },
+      { "id": "HTML", "name": "HTML / CSS", "level": 60, "description": "Développement web en projet d'équipe à Guardia et réalisation de ce portfolio." },
+      { "id": "PHP", "name": "PHP", "level": 45, "description": "Backend d'une application web full stack sécurisée développée en équipe." },
+      { "id": "MySQL", "name": "MySQL", "level": 45, "description": "Base de données d'une application web full stack développée en équipe." },
+      { "id": "Automatisation", "name": "Automatisation", "level": 55, "description": "Automatisation de l'enrichissement de logs (Shuffle) et de la génération de rapports d'analyse." },
+      { "id": "Ollama", "name": "IA locale (Ollama)", "level": 45, "description": "Déploiement local d'un modèle de langage pour interroger une base OpenSearch en langage naturel." }
+    ]
+  },
+  {
+    "domain": "Savoir-être",
+    "skills": [
+      { "id": "Travail d'équipe", "name": "Travail d'équipe", "level": 75, "description": "Projets d'équipe à Guardia, intégration aux équipes de l'ENS et d'AlgoSecure, et travail collectif dans des conditions exigeantes lors de mes jobs d'été." },
+      { "id": "Documentation", "name": "Documentation", "level": 70, "description": "Documentation complète des règles de traitement des logs à l'ENS ; je documente et versionne systématiquement mes travaux." },
+      { "id": "Sensibilisation", "name": "Sensibilisation", "level": 55, "description": "Participation à des actions de sensibilisation à la cybersécurité auprès des utilisateurs de l'ENS." },
+      { "id": "Entrepreneuriat", "name": "Entrepreneuriat", "level": 50, "description": "Création et gestion de ma micro-entreprise, 69 Info Services, depuis mai 2026." },
+      { "id": "Encadrement", "name": "Encadrement", "level": 50, "description": "Encadrement d'intérimaires chez E.Leclerc en remplacement d'un responsable." }
     ]
   }
 ]

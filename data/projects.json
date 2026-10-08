@@ -31,5 +31,49 @@
     "type": "Développement",
     "technologies": ["HTML", "CSS", "PHP", "MySQL", "API REST"],
     "skills": ["Dev Full Stack", "Sécurité Web"]
+  },
+  {
+    "id": "project-04",
+    "title": "Pentest | Plugin Python pour une plateforme d'analyse d'attaques externes",
+    "shortDescription": "Développement, pendant mon stage chez AlgoSecure, d'un plugin Python ajouté à leur plateforme d'analyse d'attaques externes, après avoir réalisé leur CTF de recrutement.",
+    "date": "Juil 2024",
+    "status": "Terminé",
+    "context": "Stage — AlgoSecure",
+    "type": "Développement",
+    "technologies": ["Python", "HTML", "JSON", "Linux"],
+    "skills": ["Pentest", "Développement"]
+  },
+  {
+    "id": "project-05",
+    "title": "SOC | Normalisation des logs de sécurité sur Graylog (ECS)",
+    "shortDescription": "Reprise et normalisation au format ECS de l'ensemble des règles de traitement des logs de sécurité de l'ENS de Lyon, avec documentation complète, environnement de test dédié et reconstruction des tableaux de bord de supervision.",
+    "date": "Mai 2026",
+    "status": "Terminé",
+    "context": "Stage — ENS de Lyon",
+    "type": "SOC / Supervision",
+    "technologies": ["Graylog", "ECS", "OpenSearch"],
+    "skills": ["Supervision", "Documentation"]
+  },
+  {
+    "id": "project-06",
+    "title": "IA | Outil d'analyse de logs assisté par IA",
+    "shortDescription": "Conception d'un outil d'analyse de logs : modèle de langage déployé localement (Ollama), interrogation d'une base OpenSearch en langage naturel et génération automatisée de rapports d'analyse.",
+    "date": "2026",
+    "status": "Terminé",
+    "context": "Stage — ENS de Lyon",
+    "type": "Outil",
+    "technologies": ["Ollama", "OpenSearch", "LLM"],
+    "skills": ["Analyse de logs", "Automatisation"]
+  },
+  {
+    "id": "project-07",
+    "title": "SOAR | Workflow Shuffle d'enrichissement des logs (MISP)",
+    "shortDescription": "Workflow Shuffle qui fait ressortir les connexions vers des IP remontées sur MISP ainsi que les mails DISCARD, et produit des logs enrichis exploités ensuite par un corrélateur.",
+    "date": "Sept 2026",
+    "status": "Terminé",
+    "context": "Prestation — ENS de Lyon",
+    "type": "Automatisation",
+    "technologies": ["Shuffle", "MISP", "Graylog", "Webhook.site"],
+    "skills": ["Threat Intelligence", "Automatisation"]
   }
 ]

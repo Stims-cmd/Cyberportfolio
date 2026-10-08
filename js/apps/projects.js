@@ -76,7 +76,7 @@
     openProject(id) {
       WindowManager.openWindow("projects");
       setTimeout(() => {
-        const body = document.querySelector('.window[aria-label="Projects"] .app-content');
+        const body = document.querySelector('.window[aria-label="Projets"] .app-content');
         if (body) renderDetail(body, id);
       }, 150);
     },

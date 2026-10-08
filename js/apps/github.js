@@ -1,5 +1,5 @@
 (function () {
-  const GITHUB_USERNAME = "stims-cmd"; // <- remplace par ton vrai pseudo GitHub
+  const GITHUB_USERNAME = "stims-cmd";
 
   const repos = [
     // Liste statique optionnelle — laisse vide pour n'afficher que le lien du profil.
@@ -20,7 +20,7 @@
             </a>
           `).join("")}
         </div>
-      ` : `<p class="placeholder">Ajoute des repositories dans js/apps/github.js, ou laisse simplement le lien vers ton profil.</p>`}
+      ` : ""}
     `;
   }
 
