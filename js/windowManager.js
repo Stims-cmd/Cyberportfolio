@@ -15,6 +15,11 @@ const WindowManager = (() => {
   let openOffset = 0;
   let currentDesktop = "portfolio";
 
+  // Agrandit la taille d'ouverture déclarée par chaque app, sans dépasser
+  // le bureau (marge comprise) sur les petits écrans.
+  const WINDOW_SCALE = 1.4;
+  const WINDOW_MARGIN = 20;
+
   const isMobile = () => window.innerWidth <= 768;
   const appDesktop = (id) => (apps[id] && apps[id].desktop) || "portfolio";
 
@@ -155,12 +160,18 @@ const WindowManager = (() => {
     if (app.theme) el.classList.add(`theme-${app.theme}`);
 
     openOffset = (openOffset + 28) % 160;
+    let left = 60 + openOffset;
+    let top = 40 + openOffset;
+    const width = Math.min(Math.round((app.width || 520) * WINDOW_SCALE), Math.max(280, layer.clientWidth - 2 * WINDOW_MARGIN));
+    const height = Math.min(Math.round((app.height || 420) * WINDOW_SCALE), Math.max(200, layer.clientHeight - 2 * WINDOW_MARGIN));
+    left = Math.max(WINDOW_MARGIN, Math.min(left, layer.clientWidth - width - WINDOW_MARGIN));
+    top = Math.max(WINDOW_MARGIN, Math.min(top, layer.clientHeight - height - WINDOW_MARGIN));
     if (!isMobile()) {
-      el.style.left = `${60 + openOffset}px`;
-      el.style.top = `${40 + openOffset}px`;
+      el.style.left = `${left}px`;
+      el.style.top = `${top}px`;
     }
-    if (app.width) el.style.width = `${app.width}px`;
-    if (app.height) el.style.height = `${app.height}px`;
+    el.style.width = `${width}px`;
+    el.style.height = `${height}px`;
 
     el.innerHTML = `
       <header class="window-titlebar">
