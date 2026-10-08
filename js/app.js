@@ -44,7 +44,7 @@
 
   const PASSION_WALLPAPER = {
     src: "assets/images/desktop/fond-passion.jpg",
-    opacity: 0.35,
+    opacity: 0.6,
   };
 
   const DESKTOPS = {
