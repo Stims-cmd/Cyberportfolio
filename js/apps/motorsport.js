@@ -36,7 +36,9 @@
     `;
 
     // Détail d'un rallye, déplié directement sous sa carte (accordéon).
-    const eventDetail = (ev) => `
+    const eventDetail = (id) => {
+      const ev = data.events.find((e) => e.id === id);
+      return `
         <p class="desc">${ev.experience}</p>
         <p>${(ev.skills || []).map((s) => `<span class="tag">${skillLabel(s)}</span>`).join("")}</p>
         ${ev.photos?.length ? `
@@ -49,17 +51,13 @@
           </div>
         ` : '<p class="placeholder">Galerie photo à venir.</p>'}
       `;
+    };
 
-    const eventCard = (ev) => `
-        <div class="card">
-          <button class="card-open" data-event="${ev.id}" aria-expanded="false" aria-controls="event-detail-${ev.id}">
-            <div class="meta">${ev.date} · ${ev.location} · ${roleLabel(ev.role)}</div>
-            <h3>${ev.name}</h3>
-            <div class="desc">${ev.description}</div>
-          </button>
-          <div class="event-detail" id="event-detail-${ev.id}" hidden></div>
-        </div>
-      `;
+    const eventCard = (ev) => Accordion.card(ev.id, `
+      <div class="meta">${ev.date} · ${ev.location} · ${roleLabel(ev.role)}</div>
+      <h3>${ev.name}</h3>
+      <div class="desc">${ev.description}</div>
+    `);
 
     function renderEvents() {
       const byRole = (ev) => !activeRole || ev.role === activeRole;
@@ -74,17 +72,8 @@
         <div class="card-list">${upcoming.map(eventCard).join("")}</div>
       ` : "";
 
-      container.querySelectorAll("[data-event]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const panel = btn.nextElementSibling;
-          const open = btn.getAttribute("aria-expanded") === "true";
-          if (!open && !panel.innerHTML) {
-            panel.innerHTML = eventDetail(data.events.find((e) => e.id === btn.dataset.event));
-          }
-          btn.setAttribute("aria-expanded", String(!open));
-          panel.hidden = open;
-        });
-      });
+      Accordion.bind(container.querySelector("#events-list"), eventDetail);
+      Accordion.bind(container.querySelector("#upcoming-section"), eventDetail);
     }
 
     function renderRoleDetail() {

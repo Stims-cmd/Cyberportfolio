@@ -125,6 +125,3 @@
   background: rgba(0,0,0,0.25);
   border-radius: 6px;
 }
-
-/* Détail d'un rallye déplié sous sa carte */
-.event-detail { padding: 0 0.2rem 0.4rem; border-top: 1px dashed rgba(255,255,255,0.15); margin-top: 0.5rem; padding-top: 0.6rem; }

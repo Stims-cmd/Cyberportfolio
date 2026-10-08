@@ -12,7 +12,7 @@
     // { id: "lab", label: "LAB", glyph: "🧪", pos: { top: "26%", left: "48%" } },
     { id: "skills", label: "Skills", glyph: "📊", pos: { top: "58%", left: "30%" } },
     { id: "github", label: "GitHub", glyph: "💻", pos: { top: "18%", left: "78%" } },
-    { id: "journey", label: "Mon ADN", glyph: "🧬", pos: { top: "68%", left: "70%" } },
+    { id: "journey", label: "Mon Parcours", glyph: "🧭", pos: { top: "68%", left: "70%" } },
     { id: "about", label: "A Propos", glyph: "👤", pos: { top: "82%", left: "6%" } },
     { id: "contact", label: "Contact", glyph: "✉️", pos: { top: "84%", left: "55%" } },
     { id: "trash", label: "Corbeille", glyph: "🗑️", pos: { top: "4%", left: "92%" } },

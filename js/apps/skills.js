@@ -80,7 +80,7 @@
         <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-start">
           <canvas id="radar-${di}" width="220" height="220" role="img" aria-label="Diagramme radar : ${d.domain}"></canvas>
           <div style="display:flex; flex-wrap:wrap; align-content:flex-start; flex:1; min-width:160px">
-            ${d.skills.map((s) => `<button class="tag" data-skill="${s.id}">${s.name} · ${s.level}%</button>`).join("")}
+            ${d.skills.map((s) => `<button class="tag" data-skill="${s.id}" aria-pressed="false">${s.name} · ${s.level}%</button>`).join("")}
           </div>
         </div>
         <div id="skill-detail-${di}"></div>
@@ -103,26 +103,30 @@
     });
   }
 
-  function showSkillDetail(container, skillId) {
+  // Affiche le détail d'une compétence juste sous son domaine ; un second clic
+  // sur la même compétence le replie. Un seul détail ouvert à la fois.
+  function showSkillDetail(container, skillId, { toggle = true } = {}) {
     const meta = PortfolioData.findSkillMeta(skillId);
     if (!meta) return;
-    const projects = PortfolioData.getProjectsForSkill(skillId);
+    const di = PortfolioData.store.skills.findIndex((d) => d.domain === meta.domain);
+    const panel = container.querySelector(`#skill-detail-${di}`);
+    const alreadyOpen = panel.dataset.skill === skillId;
 
-    let panel = container.querySelector("#skill-focus-panel");
-    if (!panel) {
-      panel = document.createElement("div");
-      panel.id = "skill-focus-panel";
-      panel.className = "card";
-      panel.style.marginTop = "1rem";
-      container.prepend(panel);
-    }
+    container.querySelectorAll("[id^='skill-detail-']").forEach((p) => { p.innerHTML = ""; delete p.dataset.skill; });
+    container.querySelectorAll("[data-skill]").forEach((t) => t.setAttribute("aria-pressed", "false"));
+    if (alreadyOpen && toggle) return;
+
+    const projects = PortfolioData.getProjectsForSkill(skillId);
+    panel.dataset.skill = skillId;
+    container.querySelector(`[data-skill="${CSS.escape(skillId)}"]`)?.setAttribute("aria-pressed", "true");
     panel.innerHTML = `
-      <h3>${meta.name} — ${meta.level}%</h3>
-      <p class="desc">${meta.description}</p>
-      <p class="meta">Domaine : ${meta.domain}</p>
-      ${projects.length
-        ? `<div>${projects.map((p) => `<button class="tag" data-open-project="${p.id}">${p.title}</button>`).join("")}</div>`
-        : `<p class="placeholder">Aucun projet lié pour le moment.</p>`}
+      <div class="card" style="margin:0.5rem 0 1rem">
+        <h3>${meta.name} — ${meta.level}%</h3>
+        <p class="desc">${meta.description}</p>
+        ${projects.length
+          ? `<div>${projects.map((p) => `<button class="tag" data-open-project="${p.id}">📁 ${p.title}</button>`).join("")}</div>`
+          : `<p class="placeholder">Aucun projet lié pour le moment.</p>`}
+      </div>
     `;
     panel.querySelectorAll("[data-open-project]").forEach((btn) => {
       btn.addEventListener("click", () => window.ProjectsApp?.openProject(btn.dataset.openProject));
@@ -141,7 +145,7 @@
   window.SkillsApp = {
     focusSkill(id) {
       const body = document.querySelector('.window[aria-label="Skills"] .app-content');
-      if (body) showSkillDetail(body, id);
+      if (body) showSkillDetail(body, id, { toggle: false });
     },
   };
 })();

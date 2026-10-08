@@ -1,4 +1,39 @@
 (function () {
+  const SECTIONS = [
+    { category: "experience", title: "Expériences professionnelles" },
+    { category: "formation", title: "Formation" },
+  ];
+
+  // Du plus récent au plus ancien : date de début, puis date de fin
+  // (une étape "en cours", sans date de fin, passe devant).
+  function byMostRecent(a, b) {
+    return (b.start || "").localeCompare(a.start || "")
+      || (b.end || "9999").localeCompare(a.end || "9999");
+  }
+
+  function stepHeader(s) {
+    return `
+      <div class="meta">${s.date}</div>
+      <h3>${s.title}</h3>
+      <div class="desc">${s.context}</div>
+    `;
+  }
+
+  function stepDetail(id) {
+    const step = PortfolioData.store.journey.find((s) => s.id === id);
+    return `
+      <p class="desc">${step.achievements}</p>
+      ${step.technologies?.length ? `<p>${step.technologies.map((t) => `<span class="tag">${t}</span>`).join("")}</p>` : ""}
+      ${step.projects?.length ? `
+        <p class="meta">Projets liés</p>
+        <div>${step.projects.map((pid) => {
+          const p = PortfolioData.getProjectById(pid);
+          return p ? `<button class="tag" data-open-project="${pid}">📁 ${p.title}</button>` : "";
+        }).join("")}</div>
+      ` : ""}
+    `;
+  }
+
   function render(container) {
     const steps = PortfolioData.store.journey;
     if (!steps.length) {
@@ -6,46 +41,25 @@
       return;
     }
     container.innerHTML = `
-      <h2>Mon ADN</h2>
-      <div class="card-list">
-        ${steps.map((s) => `
-          <div class="card">
-            <button class="card-open" data-step="${s.id}">
-              <div class="meta">${s.date}</div>
-              <h3>${s.title}</h3>
-              <div class="desc">${s.context}</div>
-            </button>
-          </div>
-        `).join("")}
-      </div>
-      <div id="journey-detail"></div>
+      <h2>Mon Parcours</h2>
+      ${SECTIONS.map(({ category, title }) => {
+        const items = steps.filter((s) => s.category === category).sort(byMostRecent);
+        return items.length ? `
+          <h2>${title}</h2>
+          <div class="card-list">${items.map((s) => Accordion.card(s.id, stepHeader(s))).join("")}</div>
+        ` : "";
+      }).join("")}
     `;
-    container.querySelectorAll("[data-step]").forEach((btn) => {
-      btn.addEventListener("click", () => showStep(container, btn.dataset.step));
+    Accordion.bind(container, stepDetail, (panel) => {
+      panel.querySelectorAll("[data-open-project]").forEach((btn) => {
+        btn.addEventListener("click", () => window.ProjectsApp?.openProject(btn.dataset.openProject));
+      });
     });
-  }
-
-  function showStep(container, id) {
-    const step = PortfolioData.store.journey.find((s) => s.id === id);
-    if (!step) return;
-    const panel = container.querySelector("#journey-detail");
-    panel.innerHTML = `
-      <div class="card" style="margin-top:1rem">
-        <h3>${step.date} — ${step.title}</h3>
-        <p class="desc">${step.achievements}</p>
-        ${step.technologies?.length ? `<p>${step.technologies.map((t) => `<span class="tag">${t}</span>`).join("")}</p>` : ""}
-        ${step.projects?.length ? `<div>${step.projects.map((pid) => `<button class="tag" data-open-project="${pid}">Projet lié</button>`).join("")}</div>` : ""}
-      </div>
-    `;
-    panel.querySelectorAll("[data-open-project]").forEach((btn) => {
-      btn.addEventListener("click", () => window.ProjectsApp?.openProject(btn.dataset.openProject));
-    });
-    panel.scrollIntoView({ behavior: "smooth" });
   }
 
   WindowManager.registerApp("journey", {
-    title: "Mon ADN",
-    icon: "🧬",
+    title: "Mon Parcours",
+    icon: "🧭",
     width: 540,
     height: 480,
     render,

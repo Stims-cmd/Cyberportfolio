@@ -339,6 +339,8 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%; padding: 0; font: inherit; cursor: pointer;
 }
 .card:hover, .card:focus-within { border-color: var(--accent); }
+/* Détail déplié sous une carte (voir js/accordion.js) */
+.card-detail { margin-top: 0.5rem; padding: 0.6rem 0.2rem 0.4rem; border-top: 1px dashed rgba(255,255,255,0.15); }
 .card h3 { margin: 0 0 0.3rem; font-size: 0.98rem; }
 .card .meta { color: var(--text-dim); font-size: 0.78rem; margin-bottom: 0.4rem; }
 .card .desc { color: var(--text-dim); font-size: 0.85rem; }
