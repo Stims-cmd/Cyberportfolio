@@ -10,8 +10,20 @@
 
     let activeRole = null;
 
+    // Tri automatique : le rallye le plus récent en premier. Un rallye dont la
+    // date de début n'est pas encore arrivée part dans "À venir", puis rejoint
+    // la timeline tout seul le jour venu.
+    const d = new Date();
+    const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const startOf = (ev) => ev.start || "";
+    const pastEvents = data.events.filter((ev) => startOf(ev) <= today)
+      .sort((a, b) => startOf(b).localeCompare(startOf(a)));
+    const upcomingEvents = data.events.filter((ev) => startOf(ev) > today)
+      .sort((a, b) => startOf(a).localeCompare(startOf(b)));
+
     container.innerHTML = `
       <h2>Rallye &amp; Sport Automobile</h2>
+      ${data.intro ? `<p>${data.intro}</p>` : ""}
       <p class="placeholder">Clique sur un rôle pour voir son détail et filtrer la timeline.</p>
       <p id="role-filters">
         ${data.roles.map((r) => `<button class="tag" data-role="${r.id}" aria-pressed="false">${r.label}</button>`).join("")}
@@ -20,13 +32,11 @@
 
       <h2>Timeline</h2>
       <div id="events-list" class="card-list"></div>
+      <div id="upcoming-section"></div>
       <div id="motorsport-detail"></div>
     `;
 
-    function renderEvents() {
-      const list = container.querySelector("#events-list");
-      const events = activeRole ? data.events.filter((ev) => ev.role === activeRole) : data.events;
-      list.innerHTML = events.length ? events.map((ev) => `
+    const eventCard = (ev) => `
         <div class="card">
           <button class="card-open" data-event="${ev.id}">
             <div class="meta">${ev.date} · ${ev.location} · ${roleLabel(ev.role)}</div>
@@ -34,9 +44,22 @@
             <div class="desc">${ev.description}</div>
           </button>
         </div>
-      `).join("") : `<p class="placeholder">Aucun événement pour ce rôle pour le moment.</p>`;
+      `;
 
-      list.querySelectorAll("[data-event]").forEach((btn) => {
+    function renderEvents() {
+      const byRole = (ev) => !activeRole || ev.role === activeRole;
+      const list = container.querySelector("#events-list");
+      const events = pastEvents.filter(byRole);
+      list.innerHTML = events.length ? events.map(eventCard).join("")
+        : `<p class="placeholder">Aucun événement pour ce rôle pour le moment.</p>`;
+
+      const upcoming = upcomingEvents.filter(byRole);
+      container.querySelector("#upcoming-section").innerHTML = upcoming.length ? `
+        <h2>À venir</h2>
+        <div class="card-list">${upcoming.map(eventCard).join("")}</div>
+      ` : "";
+
+      container.querySelectorAll("[data-event]").forEach((btn) => {
         btn.addEventListener("click", () => {
           const ev = data.events.find((e) => e.id === btn.dataset.event);
           const panel = container.querySelector("#motorsport-detail");
@@ -46,7 +69,15 @@
               <p class="meta">${roleLabel(ev.role)} · ${ev.date} · ${ev.location}</p>
               <p class="desc">${ev.experience}</p>
               <p>${(ev.skills || []).map((s) => `<span class="tag">${skillLabel(s)}</span>`).join("")}</p>
-              <p class="placeholder">${ev.photos?.length ? "" : "Galerie photo à venir."}</p>
+              ${ev.photos?.length ? `
+                <div class="rally-photos">
+                  ${ev.photos.map((ph) => `
+                    <a href="./${ph.src}" target="_blank" rel="noopener">
+                      <img src="./${ph.src}" alt="${ph.alt || ev.name}" loading="lazy">
+                    </a>
+                  `).join("")}
+                </div>
+              ` : '<p class="placeholder">Galerie photo à venir.</p>'}
             </div>
           `;
           panel.scrollIntoView({ behavior: "smooth" });

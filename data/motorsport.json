@@ -1,45 +1,288 @@
 {
+  "intro": "Saison 2026 : seize rallyes, avec trois casquettes — spectateur, commissaire de piste et mécanicien d'assistance. Je suis de l'ASA du Rhône, mécanicien pour Eric Sport Passion et membre de l'OPSM, l'association qui organise le Rallye des Monts et Coteaux.",
   "roles": [
     {
       "id": "mecanicien",
       "label": "🔧 Mécanicien d'assistance",
-      "description": "Préparer, entretenir et réparer le véhicule tout au long de l'épreuve. Un rôle qui demande précision, diagnostic rapide, réactivité et travail d'équipe, souvent dans des délais très courts."
+      "description": "Préparer, entretenir et réparer le véhicule tout au long de l'épreuve. Un rôle qui demande précision, diagnostic rapide, réactivité et travail d'équipe, souvent dans des délais très courts. Je suis mécanicien pour l'équipe Eric Sport Passion."
     },
     {
       "id": "commissaire",
       "label": "🚩 Commissaire",
-      "description": "Veiller à la sécurité et au bon déroulement de l'épreuve sur le terrain. Observer, communiquer, appliquer les procédures et réagir rapidement face aux situations imprévues."
+      "description": "Veiller à la sécurité et au bon déroulement de l'épreuve sur le terrain. Observer, communiquer, appliquer les procédures et réagir rapidement face aux situations imprévues. Je suis membre de l'ASA du Rhône."
+    },
+    {
+      "id": "spectateur",
+      "label": "👀 Spectateur",
+      "description": "Au bord des spéciales pour soutenir les amis pilotes et copilotes, et voir à l'œuvre les meilleurs équipages, du Championnat de France jusqu'au WRC."
+    },
+    {
+      "id": "organisation",
+      "label": "🗂️ Organisation",
+      "description": "Membre de l'OPSM, l'association qui organise le Rallye National des Monts et Coteaux, en collaboration avec l'ASA du Rhône."
     }
   ],
   "events": [
     {
-      "id": "event-01",
-      "name": "[Nom du rallye / événement]",
-      "date": "2025",
-      "location": "[Lieu]",
+      "id": "monte-carlo-2026",
+      "name": "Rallye Monte-Carlo",
+      "date": "22-25 janv. 2026",
+      "start": "2026-01-22",
+      "end": "2026-01-25",
+      "location": "Monte-Carlo",
+      "role": "spectateur",
+      "description": "94e édition, manche d'ouverture du WRC.",
+      "experience": "Pour ouvrir la saison, j'étais au bord de la route. J'ai eu la chance de voir la sortie majestueuse d'Oliver Solberg, le samedi, sur une portion soudainement enneigée : il est parti tout droit à travers une clôture jusque dans un champ, puis a réussi à repartir et à signer le meilleur temps de la spéciale. Il a gagné le rallye, devant Elfyn Evans et Sébastien Ogier, et est devenu le plus jeune vainqueur de l'épreuve dans l'ère WRC moderne.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/monte-carlo-2026.webp", "alt": "Voiture WRC sur une route enneigée au Rallye Monte-Carlo" }
+      ]
+    },
+    {
+      "id": "haute-vallee-azergues-2026",
+      "name": "Rallye de la Haute Vallée d'Azergues",
+      "date": "20-21 févr. 2026",
+      "start": "2026-02-20",
+      "end": "2026-02-21",
+      "location": "Haute Vallée d'Azergues",
+      "role": "commissaire",
+      "description": "5e Rallye Régional de la Haute Vallée d'Azergues.",
+      "experience": "Mon plus gros accident à ce jour : une 208 sortie de route, l'intervention des pompiers, les hélicoptères… Il a fallu gérer une situation lourde, avec calme et méthode. C'est le genre de moment où l'on mesure à quoi sert vraiment un commissaire.",
+      "skills": ["gestion-crise", "procedures", "sang-froid"],
+      "photos": [
+        { "src": "assets/images/rallyes/haute-vallee-azergues-2026.webp", "alt": "Voiture accidentée dans les arbres au Rallye de la Haute Vallée d'Azergues" }
+      ]
+    },
+    {
+      "id": "baldomerien-2026",
+      "name": "Rallye Baldomérien",
+      "date": "6-7 mars 2026",
+      "start": "2026-03-06",
+      "end": "2026-03-07",
+      "location": "Saint-Galmier",
       "role": "mecanicien",
-      "description": "[Description de l'événement]",
-      "experience": "[Ce que tu as vécu]",
-      "skills": ["travail-equipe", "diagnostic"],
+      "description": "Début de saison pour Eric Sport Passion, sur la 206 XS N2S.",
+      "experience": "J'ai fait de la mécanique de base sur la 206 XS N2S, rien de spécial. La journée a été hachée : plusieurs arrêts de course, l'ES5 annulée à cause de spectateurs placés dans des zones interdites, et la dernière spéciale neutralisée après des sorties de route. L'équipage termine 109e sur 143 et 5e de la classe N2S. L'objectif, reprendre le rythme après l'hiver, était atteint.",
+      "skills": ["mecanique", "travail-equipe"],
+      "photos": [
+        { "src": "assets/images/rallyes/baldomerien-2026.webp", "alt": "Assistance d'Eric Sport Passion au Rallye Baldomérien" }
+      ]
+    },
+    {
+      "id": "vignes-regnie-2026",
+      "name": "Rallye des Vignes de Régnié",
+      "date": "20-21 mars 2026",
+      "start": "2026-03-20",
+      "end": "2026-03-21",
+      "location": "Régnié",
+      "role": "commissaire",
+      "description": "Deux sorties de route à gérer à mon poste.",
+      "experience": "J'ai géré la sortie d'une Porsche et la sortie de route de la 208 des Delorme. J'ai failli me faire faucher, parce qu'un pilote n'a pas respecté le drapeau jaune en amont. C'est un rappel brutal que le drapeau jaune n'est pas une suggestion.",
+      "skills": ["reactivite", "procedures", "securite"],
+      "photos": [
+        { "src": "assets/images/rallyes/vignes-regnie-2026.webp", "alt": "Porsche en spéciale, commissaires au bord de la route, au Rallye des Vignes de Régnié" }
+      ]
+    },
+    {
+      "id": "pays-du-gier-2026",
+      "name": "Rallye du Pays du Gier",
+      "date": "3-4 avr. 2026",
+      "start": "2026-04-03",
+      "end": "2026-04-04",
+      "location": "Pays du Gier",
+      "role": "spectateur",
+      "description": "36e édition, ajoutée au programme d'Eric Sport Passion pour marquer des points en vue de la finale de la Coupe de France.",
+      "experience": "J'étais en soutien au bord des routes, pour encourager mes amis pilotes et copilotes.",
+      "skills": [],
       "photos": []
     },
     {
-      "id": "event-02",
-      "name": "[Nom du rallye / événement]",
-      "date": "2024",
-      "location": "[Lieu]",
+      "id": "rhone-charbonnieres-2026",
+      "name": "Rallye Rhône-Charbonnières",
+      "date": "16-18 avr. 2026",
+      "start": "2026-04-16",
+      "end": "2026-04-18",
+      "location": "Rhône",
+      "role": "spectateur",
+      "description": "78e édition, manche du Championnat de France des Rallyes.",
+      "experience": "Une édition sous la pluie. Mon ami Pierre Bénévent a fait le spectacle en C2 R2. En tête, Raphaël Astier (Porsche) a gagné devant Yoann Bonato (Lancia), deuxième au général.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/rhone-charbonnieres-2026.webp", "alt": "Voiture sortie de la route au Rallye Rhône-Charbonnières" }
+      ]
+    },
+    {
+      "id": "bassin-annoneen-2026",
+      "name": "Rallye du Bassin Annonéen",
+      "date": "24-25 avr. 2026",
+      "start": "2026-04-24",
+      "end": "2026-04-25",
+      "location": "Bassin Annonéen",
       "role": "commissaire",
-      "description": "[Description]",
-      "experience": "[Expérience vécue]",
-      "skills": ["reactivite", "procedures"],
+      "description": "30e Rallye National du Bassin Annonéen.",
+      "experience": "J'ai vécu une belle sortie de route sans gravité, qui a quand même semé la panique : la voiture a tapé une botte de paille de ma chicane et plus aucune voiture ne pouvait passer. Il a fallu réagir vite pour rétablir le passage en toute sécurité.",
+      "skills": ["reactivite", "securite", "imprevus"],
+      "photos": [
+        { "src": "assets/images/rallyes/bassin-annoneen-2026.webp", "alt": "Chicane en bottes de paille sur une spéciale du Rallye du Bassin Annonéen" }
+      ]
+    },
+    {
+      "id": "ain-jura-2026",
+      "name": "Rallye Ain-Jura",
+      "date": "8-9 mai 2026",
+      "start": "2026-05-08",
+      "end": "2026-05-09",
+      "location": "Haut-Bugey",
+      "role": "mecanicien",
+      "description": "50 ans de l'épreuve, née en 1976 dans le Haut-Bugey ; manche du Championnat de France 2e division.",
+      "experience": "Un rendez-vous important pour Eric Sport Passion, avec l'objectif d'aller chercher des points pour la finale de la Coupe de France. Le samedi, l'équipage avait repris la tête de la classe N2S. Puis, à l'ES9, la voiture a décroché de l'arrière et est partie en tonneaux dans un ravin. L'équipage s'en sort sans blessure grave, mais la saison s'arrête là. C'est dommage, car ils concouraient pour la finale.",
+      "skills": ["mecanique", "travail-equipe", "imprevus"],
+      "photos": [
+        { "src": "assets/images/rallyes/ain-jura-2026.webp", "alt": "Voiture d'Eric Sport Passion sur le toit dans le ravin au Rallye Ain-Jura" }
+      ]
+    },
+    {
+      "id": "matheysine-2026",
+      "name": "Rallye de la Matheysine",
+      "date": "15-16 mai 2026",
+      "start": "2026-05-15",
+      "end": "2026-05-16",
+      "location": "Matheysine",
+      "role": "spectateur",
+      "description": "En soutien aux copains engagés.",
+      "experience": "Même rôle qu'au Gier : soutenir les copains au bord de la route, et aller boire des coups à l'assistance.",
+      "skills": [],
+      "photos": []
+    },
+    {
+      "id": "vins-macon-2026",
+      "name": "Rallye des Vins de Mâcon",
+      "date": "5-7 juin 2026",
+      "start": "2026-06-05",
+      "end": "2026-06-07",
+      "location": "Mâcon",
+      "role": "commissaire",
+      "description": "43e édition, septième manche du Championnat de France de 2e division, douze spéciales.",
+      "experience": "Pas grand-chose à signaler pour moi, à part un tout droit bien rattrapé.",
+      "skills": ["procedures", "vigilance"],
+      "photos": [
+        { "src": "assets/images/rallyes/vins-macon-2026.webp", "alt": "Poste de commissaire dans les vignes au Rallye des Vins de Mâcon" }
+      ]
+    },
+    {
+      "id": "vosges-grand-est-2026",
+      "name": "Rallye Vosges Grand Est",
+      "date": "12-14 juin 2026",
+      "start": "2026-06-12",
+      "end": "2026-06-14",
+      "location": "Vosges",
+      "role": "spectateur",
+      "description": "41e édition, manche du Championnat de France des Rallyes, remportée par Sébastien Loeb.",
+      "experience": "Incroyable : j'ai rencontré Sébastien Loeb, rien que ça, et il m'a signé ma 306 Maxi ! Il courait au volant de la Ford Fiesta WRC 2017 d'Armando Pereira, avec sa compagne Laurène Godey, originaire des Vosges, comme copilote. Il avait gagné l'épreuve en 2019 et l'a remportée à nouveau cette année.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/vosges-grand-est-2026.webp", "alt": "Ma 306 Maxi miniature signée par Sébastien Loeb" }
+      ]
+    },
+    {
+      "id": "saint-marcellin-2026",
+      "name": "Rallye de Saint-Marcellin",
+      "date": "3-4 juil. 2026",
+      "start": "2026-07-03",
+      "end": "2026-07-04",
+      "location": "Saint-Marcellin",
+      "role": "commissaire",
+      "description": "38e Rallye National de Saint-Marcellin.",
+      "experience": "Pas beaucoup de travail sur ce rallye, mais ce sont des routes sur lesquelles j'ai grandi, donc c'était beau.",
+      "skills": ["vigilance"],
+      "photos": [
+        { "src": "assets/images/rallyes/saint-marcellin-2026.webp", "alt": "Commissaires préparant leur poste au Rallye de Saint-Marcellin" }
+      ]
+    },
+    {
+      "id": "terre-lozere-2026",
+      "name": "Rallye Terre de Lozère",
+      "date": "29-30 août 2026",
+      "start": "2026-08-29",
+      "end": "2026-08-30",
+      "location": "Lozère",
+      "role": "spectateur",
+      "description": "Manche du Championnat de France des Rallyes Terre.",
+      "experience": "J'ai vu les magnifiques passages de Sarah Rumeau, elle est trop forte ! Avec sa copilote Julie Amblard, elle vit une saison historique : victoire au Terre des Causses en avril, première victoire d'une équipe féminine au général dans le championnat de France Terre depuis 40 ans, puis au Terre d'Aléria. En Lozère, elles ont, d'après la presse, terminé deuxièmes sur leur Skoda Fabia Rally2.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/terre-lozere-2026.webp", "alt": "Skoda Fabia Rally2 de Sarah Rumeau sur la terre au Rallye Terre de Lozère" }
+      ]
+    },
+    {
+      "id": "mont-blanc-morzine-2026",
+      "name": "Rallye Mont-Blanc Morzine",
+      "date": "3-5 sept. 2026",
+      "start": "2026-09-03",
+      "end": "2026-09-05",
+      "location": "Morzine",
+      "role": "spectateur",
+      "description": "78e édition, 6e manche du Championnat de France, avec un coefficient 4, l'un des plus élevés du calendrier.",
+      "experience": "Beaucoup d'équipages étaient au rendez-vous pour préparer la finale de l'année prochaine : beaucoup de gros noms et de spectacle. Yoann Bonato s'y est imposé.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/mont-blanc-morzine-2026.webp", "alt": "Parc d'assistance de nuit au Rallye Mont-Blanc Morzine" }
+      ]
+    },
+    {
+      "id": "suran-2026",
+      "name": "Rallye du Suran",
+      "date": "18-20 sept. 2026",
+      "start": "2026-09-18",
+      "end": "2026-09-20",
+      "location": "Vallée du Suran",
+      "role": "commissaire",
+      "description": "Une sortie de route à mon poste et un collègue débutant à encadrer.",
+      "experience": "Tom Battaglia est sorti de la route à mon poste. J'ai dû gérer mon collègue commissaire, qui faisait son tout premier rallye, et j'ai utilisé pour la première fois de ma vie un extincteur.",
+      "skills": ["gestion-crise", "encadrement", "securite"],
+      "photos": []
+    },
+    {
+      "id": "ardeche-2026",
+      "name": "Rallye d'Ardèche",
+      "date": "2-4 oct. 2026",
+      "start": "2026-10-02",
+      "end": "2026-10-04",
+      "location": "Ardèche",
+      "role": "spectateur",
+      "description": "Beaux paysages et beaux tracés.",
+      "experience": "C'est un beau rallye, avec de beaux paysages et de beaux tracés.",
+      "skills": [],
+      "photos": [
+        { "src": "assets/images/rallyes/ardeche-2026.webp", "alt": "Voiture en spéciale sur une route forestière au Rallye d'Ardèche" }
+      ]
+    },
+    {
+      "id": "monts-et-coteaux-2026",
+      "name": "Rallye National Monts et Coteaux",
+      "date": "6-7 nov. 2026",
+      "start": "2026-11-06",
+      "end": "2026-11-07",
+      "location": "Saint-Laurent-d'Agny",
+      "role": "organisation",
+      "description": "17e édition : 8 spéciales pour près de 130 km chronométrés, et un nouveau challenge Peugeot en hommage à Yves Pezzutti.",
+      "experience": "Le grand rendez-vous de l'automne avec l'OPSM. Je m'occupe en particulier de l'ES1. Le rallye est organisé en collaboration avec l'ASA du Rhône, qui organise aussi le Rhône-Charbonnières. Rendez-vous sur les spéciales !",
+      "skills": ["organisation", "travail-equipe"],
       "photos": []
     }
   ],
   "skillsCatalog": [
     { "id": "travail-equipe", "label": "Travail en équipe" },
+    { "id": "mecanique", "label": "Mécanique" },
     { "id": "diagnostic", "label": "Diagnostic" },
     { "id": "reactivite", "label": "Réactivité" },
     { "id": "procedures", "label": "Respect des procédures" },
-    { "id": "imprevus", "label": "Gestion des imprévus" }
+    { "id": "imprevus", "label": "Gestion des imprévus" },
+    { "id": "gestion-crise", "label": "Gestion de situation d'urgence" },
+    { "id": "sang-froid", "label": "Sang-froid" },
+    { "id": "securite", "label": "Sécurité" },
+    { "id": "vigilance", "label": "Vigilance" },
+    { "id": "encadrement", "label": "Encadrement" },
+    { "id": "organisation", "label": "Organisation d'événement" }
   ]
 }
