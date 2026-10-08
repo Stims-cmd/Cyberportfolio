@@ -159,7 +159,20 @@ button { font-family: inherit; cursor: pointer; }
   45% { opacity: 0; transform: scale(0.99); }
   100% { opacity: 1; transform: none; }
 }
-
+/* Images décoratives placées sur le bureau (pas des icônes, pas des fenêtres) */
+.desktop-images {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.desktop-image {
+  position: absolute;
+  width: clamp(70px, 16vw, 200px);
+  height: auto;
+  border-radius: var(--radius);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.45));
+  user-select: none;
+}
 .icons {
   position: absolute;
   inset: 0;

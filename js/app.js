@@ -23,9 +23,21 @@
     { id: "garage", label: "Passions", glyph: "🏁", pos: { top: "22%", left: "15%" } },
   ];
 
+  // Images décoratives du bureau : pas des icônes, pas des fenêtres. "pos"
+  // utilise le même système en % que les icônes pour rester responsive.
+  // Remplace simplement le fichier (même nom) pour changer le visuel, ou
+  // ajoute/retire des entrées ici — aucune autre modification nécessaire.
+  const PORTFOLIO_IMAGES = [
+    // { src: "assets/images/desktop/portfolio-sticker.png", alt: "[Description de l'image]", pos: { top: "48%", left: "88%" } },
+  ];
+
+  const PASSION_IMAGES = [
+    { src: "assets/images/desktop/fond-passion.jpg", alt: "DS3 WRC de Sebastien Loeb", pos: { top: "60%", left: "85%" } },
+  ];
+
   const DESKTOPS = {
-    portfolio: { icons: PORTFOLIO_ICONS, themeClass: null },
-    passion: { icons: PASSION_ICONS, themeClass: "theme-passion" },
+    portfolio: { icons: PORTFOLIO_ICONS, images: PORTFOLIO_IMAGES, themeClass: null },
+    passion: { icons: PASSION_ICONS, images: PASSION_IMAGES, themeClass: "theme-passion" },
   };
 
   let currentDesktopId = "portfolio";
@@ -55,7 +67,7 @@
     return positions;
   }
 
-      function renderDesktopIcons(desktopId) {
+    function renderDesktopIcons(desktopId) {
     const wrap = document.getElementById("icons");
     const isDesktop = window.innerWidth > 768;
     const icons = DESKTOPS[desktopId].icons;
@@ -89,6 +101,20 @@
     });
   }
 
+    function renderDesktopImages(desktopId) {
+    const wrap = document.getElementById("desktop-images");
+    const images = DESKTOPS[desktopId].images || [];
+    wrap.innerHTML = images.map((img) => `
+      <img
+        class="desktop-image"
+        src="./${img.src}"
+        alt="${img.alt || ""}"
+        style="top:${img.pos.top}; left:${img.pos.left}"
+        onerror="this.remove()"
+      >
+    `).join("");
+  }
+
   function updateDesktopSwitchButton() {
     const icon = document.getElementById("desktop-switch-icon");
     const label = document.getElementById("desktop-switch-label");
@@ -113,8 +139,10 @@
     if (DESKTOPS[id].themeClass) desktopEl.classList.add(DESKTOPS[id].themeClass);
 
     renderDesktopIcons(id);
+    renderDesktopImages(id);
     WindowManager.setDesktop(id);
     updateDesktopSwitchButton();
+    
   }
 
   function initDesktopSwitch() {
@@ -180,6 +208,7 @@
   async function init() {
   initLanding();
   renderDesktopIcons(currentDesktopId);
+  renderDesktopImages(currentDesktopId);
   initDesktopSwitch();
   startClock();
   registerTrashApp();
