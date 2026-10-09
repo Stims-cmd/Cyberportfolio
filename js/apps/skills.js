@@ -1,44 +1,83 @@
 (function () {
+  // Découpe un libellé en lignes ne dépassant pas maxWidth (en px)
+  function wrapLabel(ctx, text, maxWidth) {
+    const lines = [];
+    let line = "";
+    text.split(" ").forEach((word) => {
+      const test = line ? `${line} ${word}` : word;
+      if (line && ctx.measureText(test).width > maxWidth) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = test;
+      }
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
   function drawRadar(canvas, skills) {
+    // Canvas plus large que haut : de la place sur les côtés pour les libellés
+    const width = 340, height = 250;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
     const ctx = canvas.getContext("2d");
-    const size = canvas.width;
-    const center = size / 2;
-    const radius = size / 2 - 28;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = height / 2 - 34;
     const n = skills.length;
     const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#5eead4";
 
-    ctx.clearRect(0, 0, size, size);
+    ctx.clearRect(0, 0, width, height);
 
     // grille
     ctx.strokeStyle = "rgba(255,255,255,0.12)";
     ctx.fillStyle = "rgba(255,255,255,0.55)";
     ctx.font = "11px sans-serif";
-    ctx.textAlign = "center";
 
     for (let ring = 1; ring <= 4; ring++) {
       ctx.beginPath();
       for (let i = 0; i <= n; i++) {
         const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
         const r = (radius * ring) / 4;
-        const x = center + r * Math.cos(angle);
-        const y = center + r * Math.sin(angle);
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
         i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
       }
       ctx.stroke();
     }
 
     // axes + labels
+    const lineHeight = 13;
     skills.forEach((s, i) => {
       const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
-      const x = center + radius * Math.cos(angle);
-      const y = center + radius * Math.sin(angle);
+      const cos = Math.cos(angle), sin = Math.sin(angle);
       ctx.beginPath();
-      ctx.moveTo(center, center);
-      ctx.lineTo(x, y);
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + radius * cos, cy + radius * sin);
       ctx.stroke();
-      const lx = center + (radius + 16) * Math.cos(angle);
-      const ly = center + (radius + 16) * Math.sin(angle);
-      ctx.fillText(s.name, lx, ly);
+
+      // Libellé aligné vers l'extérieur selon le côté du radar
+      const lx = cx + (radius + 8) * cos;
+      const ly = cy + (radius + 8) * sin;
+      let align = "center";
+      if (cos > 0.2) align = "left";
+      else if (cos < -0.2) align = "right";
+      const room = align === "left" ? width - lx - 2 : align === "right" ? lx - 2 : width - 4;
+      const lines = wrapLabel(ctx, s.name, Math.min(room, 110));
+      const blockHeight = lines.length * lineHeight;
+      let top;
+      if (sin < -0.5) top = ly - blockHeight;          // en haut : au-dessus du point
+      else if (sin > 0.5) top = ly;                     // en bas : sous le point
+      else top = ly - blockHeight / 2;                  // sur les côtés : centré
+      ctx.textAlign = align;
+      ctx.textBaseline = "top";
+      lines.forEach((l, li) => ctx.fillText(l, lx, top + li * lineHeight));
     });
 
     // polygone de valeurs
@@ -46,8 +85,8 @@
     skills.forEach((s, i) => {
       const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
       const r = (radius * (s.level || 0)) / 100;
-      const x = center + r * Math.cos(angle);
-      const y = center + r * Math.sin(angle);
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
       i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
     });
     ctx.closePath();
@@ -61,7 +100,7 @@
     return skills.map((s, i) => {
       const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
       const r = (radius * (s.level || 0)) / 100;
-      return { id: s.id, x: center + r * Math.cos(angle), y: center + r * Math.sin(angle) };
+      return { id: s.id, x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
     });
   }
 
@@ -78,7 +117,7 @@
       ${domains.map((d, di) => `
         <h2>${d.domain}</h2>
         <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-start">
-          <canvas id="radar-${di}" width="220" height="220" role="img" aria-label="Diagramme radar : ${d.domain}"></canvas>
+          <canvas id="radar-${di}" width="340" height="250" role="img" aria-label="Diagramme radar : ${d.domain}"></canvas>
           <div style="display:flex; flex-wrap:wrap; align-content:flex-start; flex:1; min-width:160px">
             ${d.skills.map((s) => `<button class="tag" data-skill="${s.id}" aria-pressed="false">${s.name} · ${s.level}%</button>`).join("")}
           </div>
