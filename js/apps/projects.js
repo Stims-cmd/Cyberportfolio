@@ -23,6 +23,7 @@
     return `
       <dl class="section-detail">
         <dt>Contexte</dt><dd>${p.context} · ${p.date} · ${p.status}</dd>
+        ${p.description ? `<dt>Réalisation</dt><dd>${p.description}</dd>` : ""}
         <dt>Technologies</dt><dd>${(p.technologies || []).map(techTag).join(" ")}</dd>
         <dt>Compétences mobilisées</dt><dd>${(p.skills || []).map(techTag).join(" ") || '<span class="placeholder">—</span>'}</dd>
       </dl>

@@ -296,6 +296,8 @@ button { font-family: inherit; cursor: pointer; }
 .app-content h2 { font-size: 1rem; color: var(--text-dim); margin: 1.4rem 0 0.6rem; font-weight: 600; }
 .app-content h2:first-child { margin-top: 0; }
 .app-content p { margin: 0 0 0.6rem; }
+.app-content ul { margin: 0 0 0.6rem; padding-left: 1.2rem; }
+.app-content li { margin-bottom: 0.35rem; }
 .placeholder { color: var(--text-dim); font-style: italic; }
 .tag[aria-pressed="true"] { background: var(--accent); color: var(--bg-0); }
 

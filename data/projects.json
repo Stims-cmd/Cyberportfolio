@@ -33,6 +33,66 @@
     "skills": ["Dev Full Stack", "Sécurité Web"]
   },
   {
+    "id": "project-08",
+    "title": "DevSecOps | API Python (CI/CD, Docker, sécurité)",
+    "shortDescription": "Conception d'une application backend en Python intégrant les pratiques DevOps et DevSecOps : API REST, tests automatisés, conteneurisation et pipeline CI/CD.",
+    "description": "Développement d'une API REST (CRUD) en Python, intégration d'API externes (JSON), gestion du versioning avec Git/GitHub, mise en place de tests automatisés (pytest), conteneurisation avec Docker et automatisation via un pipeline CI/CD (GitHub Actions) incluant des contrôles de qualité et de sécurité.",
+    "date": "Déc 2025",
+    "status": "Terminé",
+    "context": "Guardia — module Programmation algorithmique sécurisée",
+    "type": "Développement",
+    "technologies": ["Python", "API REST", "pytest", "Docker", "GitHub Actions", "Git"],
+    "skills": ["DevSecOps", "CI/CD", "Sécurité applicative", "Automatisation"]
+  },
+  {
+    "id": "project-09",
+    "title": "OT / IoT | Cybersécurité industrielle & analyse d'incidents",
+    "shortDescription": "Analyse des enjeux de sécurité dans les environnements OT, IT et IoT à partir de cas réels, et définition de mesures de sécurisation basées sur les référentiels ANSSI.",
+    "description": "Étude de cas réels (Oldsmar, Colonial Pipeline, Norsk Hydro) afin d'identifier les vulnérabilités, risques et impacts sur la continuité d'activité, ainsi que la mise en place de mesures de sécurisation (prévention, détection, réponse) basées sur les référentiels ANSSI.",
+    "date": "Janv 2026",
+    "status": "Terminé",
+    "context": "Guardia — module Introduction à la cybersécurité industrielle",
+    "type": "Analyse",
+    "technologies": ["OT", "IoT", "ANSSI"],
+    "skills": ["Analyse de risques", "Cybersécurité industrielle"]
+  },
+  {
+    "id": "project-10",
+    "title": "Pentest | Pentesting web & analyse de vulnérabilités",
+    "shortDescription": "Analyse et exploitation de vulnérabilités web en environnement virtualisé, jusqu'à un audit de sécurité complet avec rapport et recommandations.",
+    "description": "Utilisation d'outils tels que Burp Suite, Kali Linux, VirtualBox et DVWA pour identifier et exploiter des failles (SQL Injection, XSS), analyser les requêtes HTTP, et réaliser un audit de sécurité complet avec rédaction d'un rapport détaillé et de recommandations.",
+    "date": "Févr 2026",
+    "status": "Terminé",
+    "context": "Guardia — module Techniques de base de pentesting",
+    "type": "Pentest",
+    "technologies": ["Burp Suite", "Kali Linux", "VirtualBox", "DVWA", "Linux"],
+    "skills": ["Pentest", "Sécurité Web", "Analyse HTTP", "Méthodologie d'audit"]
+  },
+  {
+    "id": "project-11",
+    "title": "OSINT | Analyse de l'information (veille et vérification)",
+    "shortDescription": "Étude structurée d'une organisation en sources ouvertes : collecte, vérification des informations et synthèse argumentée avec traçabilité des sources.",
+    "description": "Réalisation d'une étude structurée sur une organisation, incluant la collecte d'informations publiques, leur vérification (recoupement, datation, fiabilité), et la production d'une synthèse argumentée avec traçabilité des sources, dans le respect du cadre éthique et légal.",
+    "date": "Févr 2026",
+    "status": "Terminé",
+    "context": "Guardia — module Techniques de base de la maîtrise de l'information",
+    "type": "OSINT",
+    "technologies": ["OSINT"],
+    "skills": ["Veille", "Fact-checking", "Évaluation de sources", "Esprit critique"]
+  },
+  {
+    "id": "project-12",
+    "title": "Crise | Gestion de crise cyber & coordination opérationnelle",
+    "shortDescription": "Travail en cellule de crise sur un scénario réaliste inspiré d'exercices de la Gendarmerie nationale : analyse, gouvernance, plan d'actions et communication de crise.",
+    "description": "Travail en cellule de crise pour analyser une situation complexe, identifier les risques et impacts, définir une gouvernance de crise, élaborer un plan d'actions (PCA/PRA) et gérer la communication interne et externe selon les référentiels ISO 22361 / ANSSI.",
+    "date": "Mars 2026",
+    "status": "Terminé",
+    "context": "Guardia — module Gestion de crise",
+    "type": "Gestion de crise",
+    "technologies": ["PCA / PRA", "ISO 22361", "ANSSI"],
+    "skills": ["Gestion de crise", "Analyse de risques", "Communication de crise", "Travail d'équipe"]
+  },
+  {
     "id": "project-04",
     "title": "Pentest | Plugin Python pour une plateforme d'analyse d'attaques externes",
     "shortDescription": "Développement, pendant mon stage chez AlgoSecure, d'un plugin Python ajouté à leur plateforme d'analyse d'attaques externes, après avoir réalisé leur CTF de recrutement.",
