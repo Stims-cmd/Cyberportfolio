@@ -1,60 +1,48 @@
 [
   {
-    "id": "project-01",
-    "title": "Réseau | Déploiement d’une infrastructure réseau sécurisée",
-    "shortDescription": "Conception et déploiement en équipe d’une infrastructure réseau d’entreprise virtualisée, segmentée et sécurisée, avec OPNsense, Windows Server et Linux.",
-    "date": "Oct 2025",
+    "id": "project-07",
+    "title": "SOAR | Workflow Shuffle d'enrichissement des logs (MISP)",
+    "shortDescription": "Workflow Shuffle qui fait ressortir les connexions vers des IP remontées sur MISP ainsi que les mails DISCARD, et produit des logs enrichis exploités ensuite par un corrélateur.",
+    "date": "Sept 2026",
     "status": "Terminé",
-    "context": "Réseau",
-    "type": "Infra Réseau",
-    "technologies": ["DHCP", "AD", "DNS", "OPNSense"],
-    "skills": ["Travail d'équipe", "Administration réseau"]
+    "context": "Prestation — ENS de Lyon",
+    "type": "Automatisation",
+    "technologies": ["Shuffle", "MISP", "Graylog", "Webhook.site"],
+    "skills": ["Threat Intelligence", "Automatisation"]
   },
   {
-    "id": "project-02",
-    "title": "Réseau | Sécurisation d’infrastructure réseau & supervision SIEM",
-    "shortDescription": "Déploiement et sécurisation en équipe d’une infrastructure réseau virtualisée, avec supervision SIEM, proxy SSL, filtrage réseau et analyse de vulnérabilités.",
-    "date": "Nov 2025",
+    "id": "project-06",
+    "title": "IA | Outil d'analyse de logs assisté par IA",
+    "shortDescription": "Conception d'un outil d'analyse de logs : modèle de langage déployé localement (Ollama), interrogation d'une base OpenSearch en langage naturel et génération automatisée de rapports d'analyse.",
+    "date": "Juil 2026",
     "status": "Terminé",
-    "context": "Réseau",
-    "type": "Infra Réseau",
-    "technologies": ["OPNSense", "SIEM", "Proxy SSL", "Wazuh", "Squid"],
-    "skills": ["Sécurité Réseau", "Administration réseau"]
+    "context": "Stage — ENS de Lyon",
+    "type": "Outil",
+    "technologies": ["Ollama", "OpenSearch", "LLM"],
+    "skills": ["Analyse de logs", "Automatisation"]
   },
   {
-    "id": "project-03",
-    "title": "DevSecOps | Développement web full stack sécurisé (Cyberfolio)",
-    "shortDescription": "Développement en équipe d’une application web full stack sécurisée, intégrant frontend, backend, base de données, API et mécanismes de protection contre les vulnérabilités web.",
-    "date": "Dec 2025",
+    "id": "project-05",
+    "title": "SOC | Normalisation des logs de sécurité sur Graylog (ECS)",
+    "shortDescription": "Reprise et normalisation au format ECS de l'ensemble des règles de traitement des logs de sécurité de l'ENS de Lyon, avec documentation complète, environnement de test dédié et reconstruction des tableaux de bord de supervision.",
+    "date": "Mai 2026",
     "status": "Terminé",
-    "context": "Développement",
-    "type": "Développement",
-    "technologies": ["HTML", "CSS", "PHP", "MySQL", "API REST"],
-    "skills": ["Dev Full Stack", "Sécurité Web"]
+    "context": "Stage — ENS de Lyon",
+    "type": "SOC / Supervision",
+    "technologies": ["Graylog", "ECS", "OpenSearch"],
+    "skills": ["Supervision", "Documentation"]
   },
   {
-    "id": "project-08",
-    "title": "DevSecOps | API Python (CI/CD, Docker, sécurité)",
-    "shortDescription": "Conception d'une application backend en Python intégrant les pratiques DevOps et DevSecOps : API REST, tests automatisés, conteneurisation et pipeline CI/CD.",
-    "description": "Développement d'une API REST (CRUD) en Python, intégration d'API externes (JSON), gestion du versioning avec Git/GitHub, mise en place de tests automatisés (pytest), conteneurisation avec Docker et automatisation via un pipeline CI/CD (GitHub Actions) incluant des contrôles de qualité et de sécurité.",
-    "date": "Déc 2025",
+    "id": "project-12",
+    "title": "Crise | Gestion de crise cyber & coordination opérationnelle",
+    "shortDescription": "Travail en cellule de crise sur un scénario réaliste inspiré d'exercices de la Gendarmerie nationale : analyse, gouvernance, plan d'actions et communication de crise.",
+    "description": "Travail en cellule de crise pour analyser une situation complexe, identifier les risques et impacts, définir une gouvernance de crise, élaborer un plan d'actions (PCA/PRA) et gérer la communication interne et externe selon les référentiels ISO 22361 / ANSSI.",
+    "date": "Mars 2026",
     "status": "Terminé",
-    "context": "Guardia — module Programmation algorithmique sécurisée",
-    "type": "Développement",
-    "technologies": ["Python", "API REST", "pytest", "Docker", "GitHub Actions", "Git"],
-    "skills": ["DevSecOps", "CI/CD", "Sécurité applicative", "Automatisation"]
-  },
-  {
-    "id": "project-09",
-    "title": "OT / IoT | Cybersécurité industrielle & analyse d'incidents",
-    "shortDescription": "Analyse des enjeux de sécurité dans les environnements OT, IT et IoT à partir de cas réels, et définition de mesures de sécurisation basées sur les référentiels ANSSI.",
-    "description": "Étude de cas réels (Oldsmar, Colonial Pipeline, Norsk Hydro) afin d'identifier les vulnérabilités, risques et impacts sur la continuité d'activité, ainsi que la mise en place de mesures de sécurisation (prévention, détection, réponse) basées sur les référentiels ANSSI.",
-    "date": "Janv 2026",
-    "status": "Terminé",
-    "context": "Guardia — module Introduction à la cybersécurité industrielle",
-    "type": "Analyse",
-    "technologies": ["OT", "IoT", "ANSSI"],
-    "skills": ["Analyse de risques", "Cybersécurité industrielle"]
+    "context": "Guardia — module Gestion de crise",
+    "type": "Gestion de crise",
+    "technologies": ["PCA / PRA", "ISO 22361", "ANSSI"],
+    "skills": ["Gestion de crise", "Analyse de risques", "Communication de crise", "Travail d'équipe"]
   },
   {
     "id": "project-10",
@@ -81,16 +69,61 @@
     "skills": ["Veille", "Fact-checking", "Évaluation de sources", "Esprit critique"]
   },
   {
-    "id": "project-12",
-    "title": "Crise | Gestion de crise cyber & coordination opérationnelle",
-    "shortDescription": "Travail en cellule de crise sur un scénario réaliste inspiré d'exercices de la Gendarmerie nationale : analyse, gouvernance, plan d'actions et communication de crise.",
-    "description": "Travail en cellule de crise pour analyser une situation complexe, identifier les risques et impacts, définir une gouvernance de crise, élaborer un plan d'actions (PCA/PRA) et gérer la communication interne et externe selon les référentiels ISO 22361 / ANSSI.",
-    "date": "Mars 2026",
+    "id": "project-09",
+    "title": "OT / IoT | Cybersécurité industrielle & analyse d'incidents",
+    "shortDescription": "Analyse des enjeux de sécurité dans les environnements OT, IT et IoT à partir de cas réels, et définition de mesures de sécurisation basées sur les référentiels ANSSI.",
+    "description": "Étude de cas réels (Oldsmar, Colonial Pipeline, Norsk Hydro) afin d'identifier les vulnérabilités, risques et impacts sur la continuité d'activité, ainsi que la mise en place de mesures de sécurisation (prévention, détection, réponse) basées sur les référentiels ANSSI.",
+    "date": "Janv 2026",
     "status": "Terminé",
-    "context": "Guardia — module Gestion de crise",
-    "type": "Gestion de crise",
-    "technologies": ["PCA / PRA", "ISO 22361", "ANSSI"],
-    "skills": ["Gestion de crise", "Analyse de risques", "Communication de crise", "Travail d'équipe"]
+    "context": "Guardia — module Introduction à la cybersécurité industrielle",
+    "type": "Analyse",
+    "technologies": ["OT", "IoT", "ANSSI"],
+    "skills": ["Analyse de risques", "Cybersécurité industrielle"]
+  },
+  {
+    "id": "project-08",
+    "title": "DevSecOps | API Python (CI/CD, Docker, sécurité)",
+    "shortDescription": "Conception d'une application backend en Python intégrant les pratiques DevOps et DevSecOps : API REST, tests automatisés, conteneurisation et pipeline CI/CD.",
+    "description": "Développement d'une API REST (CRUD) en Python, intégration d'API externes (JSON), gestion du versioning avec Git/GitHub, mise en place de tests automatisés (pytest), conteneurisation avec Docker et automatisation via un pipeline CI/CD (GitHub Actions) incluant des contrôles de qualité et de sécurité.",
+    "date": "Déc 2025",
+    "status": "Terminé",
+    "context": "Guardia — module Programmation algorithmique sécurisée",
+    "type": "Développement",
+    "technologies": ["Python", "API REST", "pytest", "Docker", "GitHub Actions", "Git"],
+    "skills": ["DevSecOps", "CI/CD", "Sécurité applicative", "Automatisation"]
+  },
+  {
+    "id": "project-03",
+    "title": "DevSecOps | Développement web full stack sécurisé (Cyberfolio)",
+    "shortDescription": "Développement en équipe d’une application web full stack sécurisée, intégrant frontend, backend, base de données, API et mécanismes de protection contre les vulnérabilités web.",
+    "date": "Dec 2025",
+    "status": "Terminé",
+    "context": "Développement",
+    "type": "Développement",
+    "technologies": ["HTML", "CSS", "PHP", "MySQL", "API REST"],
+    "skills": ["Dev Full Stack", "Sécurité Web"]
+  },
+  {
+    "id": "project-02",
+    "title": "Réseau | Sécurisation d’infrastructure réseau & supervision SIEM",
+    "shortDescription": "Déploiement et sécurisation en équipe d’une infrastructure réseau virtualisée, avec supervision SIEM, proxy SSL, filtrage réseau et analyse de vulnérabilités.",
+    "date": "Nov 2025",
+    "status": "Terminé",
+    "context": "Réseau",
+    "type": "Infra Réseau",
+    "technologies": ["OPNSense", "SIEM", "Proxy SSL", "Wazuh", "Squid"],
+    "skills": ["Sécurité Réseau", "Administration réseau"]
+  },
+  {
+    "id": "project-01",
+    "title": "Réseau | Déploiement d’une infrastructure réseau sécurisée",
+    "shortDescription": "Conception et déploiement en équipe d’une infrastructure réseau d’entreprise virtualisée, segmentée et sécurisée, avec OPNsense, Windows Server et Linux.",
+    "date": "Oct 2025",
+    "status": "Terminé",
+    "context": "Réseau",
+    "type": "Infra Réseau",
+    "technologies": ["DHCP", "AD", "DNS", "OPNSense"],
+    "skills": ["Travail d'équipe", "Administration réseau"]
   },
   {
     "id": "project-04",
@@ -102,38 +135,5 @@
     "type": "Développement",
     "technologies": ["Python", "HTML", "JSON", "Linux"],
     "skills": ["Pentest", "Développement"]
-  },
-  {
-    "id": "project-05",
-    "title": "SOC | Normalisation des logs de sécurité sur Graylog (ECS)",
-    "shortDescription": "Reprise et normalisation au format ECS de l'ensemble des règles de traitement des logs de sécurité de l'ENS de Lyon, avec documentation complète, environnement de test dédié et reconstruction des tableaux de bord de supervision.",
-    "date": "Mai 2026",
-    "status": "Terminé",
-    "context": "Stage — ENS de Lyon",
-    "type": "SOC / Supervision",
-    "technologies": ["Graylog", "ECS", "OpenSearch"],
-    "skills": ["Supervision", "Documentation"]
-  },
-  {
-    "id": "project-06",
-    "title": "IA | Outil d'analyse de logs assisté par IA",
-    "shortDescription": "Conception d'un outil d'analyse de logs : modèle de langage déployé localement (Ollama), interrogation d'une base OpenSearch en langage naturel et génération automatisée de rapports d'analyse.",
-    "date": "2026",
-    "status": "Terminé",
-    "context": "Stage — ENS de Lyon",
-    "type": "Outil",
-    "technologies": ["Ollama", "OpenSearch", "LLM"],
-    "skills": ["Analyse de logs", "Automatisation"]
-  },
-  {
-    "id": "project-07",
-    "title": "SOAR | Workflow Shuffle d'enrichissement des logs (MISP)",
-    "shortDescription": "Workflow Shuffle qui fait ressortir les connexions vers des IP remontées sur MISP ainsi que les mails DISCARD, et produit des logs enrichis exploités ensuite par un corrélateur.",
-    "date": "Sept 2026",
-    "status": "Terminé",
-    "context": "Prestation — ENS de Lyon",
-    "type": "Automatisation",
-    "technologies": ["Shuffle", "MISP", "Graylog", "Webhook.site"],
-    "skills": ["Threat Intelligence", "Automatisation"]
   }
 ]
